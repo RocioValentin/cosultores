@@ -48,6 +48,10 @@ export default {
           foreground: "hsl(var(--accent-foreground))",
           dark: "hsl(var(--accent-dark))",
         },
+        "card-consultoria": "hsl(var(--card-consultoria))",
+        "card-capacitacion": "hsl(var(--card-capacitacion))",
+        "card-implementacion": "hsl(var(--card-implementacion))",
+        "card-auditoria": "hsl(var(--card-auditoria))",
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
