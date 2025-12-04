@@ -120,21 +120,21 @@
 }
 
 @layer components {
-  /* Corporate gradient - left to right: #0A4D8C → #1D7DD8 */
+  /* Dark corporate gradient - matching reference image */
   .navbar-gradient {
-    background: linear-gradient(to right, hsl(209 85% 30%) 0%, hsl(209 75% 48%) 100%);
+    background: linear-gradient(135deg, hsl(220 50% 12%) 0%, hsl(209 60% 25%) 50%, hsl(209 55% 35%) 100%);
   }
 
   .hero-gradient {
-    background: linear-gradient(to right, hsl(209 85% 30%) 0%, hsl(209 75% 48%) 100%);
+    background: linear-gradient(135deg, hsl(220 50% 12%) 0%, hsl(209 60% 25%) 50%, hsl(209 55% 35%) 100%);
   }
 
   .section-soft-bg {
-    background: linear-gradient(180deg, hsl(213 100% 98%) 0%, hsl(0 0% 100%) 100%);
+    background: linear-gradient(180deg, hsl(230 40% 96%) 0%, hsl(0 0% 100%) 100%);
   }
 
   .faq-gradient {
-    background: linear-gradient(to right, hsl(209 85% 30%) 0%, hsl(209 75% 48%) 100%);
+    background: linear-gradient(135deg, hsl(220 50% 12%) 0%, hsl(209 60% 25%) 50%, hsl(209 55% 35%) 100%);
   }
 
   .service-card {
