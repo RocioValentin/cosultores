@@ -29,7 +29,7 @@ const services = [
 
 const ServicesGrid = () => {
   return (
-    <section id="servicios" className="bg-secondary pb-20 lg:pb-32">
+    <section id="servicios" className="bg-secondary py-20 lg:py-32">
       <div className="container-section">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
           {services.map((service, index) => (
