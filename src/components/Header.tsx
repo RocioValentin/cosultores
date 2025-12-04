@@ -74,7 +74,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="bg-primary py-4 relative z-50">
+    <header className="navbar-gradient py-4 relative z-50">
       <div className="container-section">
         <div className="flex items-center justify-between">
           {/* Logo - Supports image */}
@@ -122,7 +122,7 @@ const Header = () => {
                 {/* Dropdown Menu */}
                 {item.dropdown && (
                   <div
-                    className={`absolute top-full left-0 mt-2 min-w-[200px] bg-background rounded-xl shadow-lg border border-border py-2 z-50 transition-all duration-200 ${
+                    className={`absolute top-full left-0 mt-2 min-w-[200px] bg-primary/95 backdrop-blur-sm rounded-xl shadow-lg border border-primary-foreground/10 py-2 z-50 transition-all duration-200 ${
                       openDropdown === item.label
                         ? "opacity-100 translate-y-0 pointer-events-auto"
                         : "opacity-0 translate-y-2 pointer-events-none"
@@ -132,7 +132,7 @@ const Header = () => {
                       <a
                         key={dropdownItem.label}
                         href={dropdownItem.href}
-                        className="block px-4 py-3 text-foreground hover:bg-secondary hover:text-primary transition-colors duration-200"
+                        className="block px-4 py-3 text-primary-foreground/90 hover:bg-primary-foreground/10 hover:text-primary-foreground transition-colors duration-200"
                       >
                         {dropdownItem.label}
                       </a>
