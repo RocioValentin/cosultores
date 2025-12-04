@@ -6,22 +6,39 @@
 
 @layer base {
   :root {
-    /* Corporate Blues */
+    /* Corporate Blues - #0A4D8C */
     --primary: 209 85% 30%;
     --primary-foreground: 0 0% 100%;
     --primary-dark: 209 90% 20%;
+    /* Blue Light / Hover - #1D7DD8 */
     --primary-light: 209 75% 48%;
     
-    /* Corporate Greens */
+    /* Corporate Greens - #4CAF50 */
     --accent: 122 39% 49%;
     --accent-foreground: 0 0% 100%;
-    --accent-dark: 122 42% 35%;
+    /* Green Hover - #2E7D32 */
+    --accent-dark: 122 52% 34%;
+    
+    /* Service Card Hover Colors */
+    --card-consultoria: 209 85% 30%;     /* #0A4D8C */
+    --card-capacitacion: 122 39% 49%;    /* #4CAF50 */
+    --card-implementacion: 209 75% 48%;  /* #1D7DD8 */
+    --card-auditoria: 122 52% 34%;       /* #2E7D32 */
     
     /* Backgrounds */
     --background: 0 0% 100%;
     --foreground: 0 0% 18%;
-    --background-soft: 220 33% 97%;
-    --background-hero: 220 60% 15%;
+    /* Blue Pastel - #F4F9FF */
+    --background-soft: 213 100% 98%;
+    --background-hero: 209 85% 30%;
+    
+    /* Gray Scale */
+    /* Gray Dark #2E2E2E */
+    --gray-dark: 0 0% 18%;
+    /* Gray Medium #6E6E6E */
+    --gray-medium: 0 0% 43%;
+    /* Gray Light #E9ECEF */
+    --gray-light: 210 14% 93%;
     
     /* Cards & Surfaces */
     --card: 0 0% 100%;
@@ -30,14 +47,14 @@
     --popover-foreground: 0 0% 18%;
     
     /* Secondary & Muted */
-    --secondary: 220 33% 97%;
+    --secondary: 213 100% 98%;
     --secondary-foreground: 0 0% 18%;
-    --muted: 220 20% 92%;
+    --muted: 210 14% 93%;
     --muted-foreground: 0 0% 43%;
     
     /* Borders & Inputs */
-    --border: 220 20% 88%;
-    --input: 220 20% 92%;
+    --border: 210 14% 88%;
+    --input: 210 14% 93%;
     --ring: 209 85% 30%;
     
     /* Destructive */
@@ -116,23 +133,40 @@
   }
 
   .service-card {
-    @apply bg-card rounded-2xl p-6 shadow-lg border-l-4 border-l-accent transition-all duration-300;
+    @apply bg-card rounded-2xl p-6 shadow-lg border border-border transition-all duration-300;
   }
 
   .service-card:hover {
-    @apply shadow-xl -translate-y-1;
+    @apply shadow-xl scale-105 border-transparent;
   }
 
-  .service-card-dark {
-    @apply bg-primary text-primary-foreground rounded-2xl p-6 shadow-lg border-l-4 border-l-accent;
+  .service-card-consultoria:hover {
+    @apply bg-[hsl(var(--card-consultoria))] text-white;
+  }
+
+  .service-card-capacitacion:hover {
+    @apply bg-[hsl(var(--card-capacitacion))] text-white;
+  }
+
+  .service-card-implementacion:hover {
+    @apply bg-[hsl(var(--card-implementacion))] text-white;
+  }
+
+  .service-card-auditoria:hover {
+    @apply bg-[hsl(var(--card-auditoria))] text-white;
   }
 
   .icon-circle {
-    @apply w-16 h-16 rounded-full bg-secondary flex items-center justify-center;
+    @apply w-14 h-14 rounded-full bg-secondary flex items-center justify-center transition-all duration-300;
   }
 
-  .icon-circle-dark {
-    @apply w-16 h-16 rounded-full bg-background/20 flex items-center justify-center;
+  /* Dropdown animations */
+  .dropdown-menu {
+    @apply opacity-0 translate-y-2 pointer-events-none transition-all duration-200;
+  }
+
+  .dropdown-menu.open {
+    @apply opacity-100 translate-y-0 pointer-events-auto;
   }
 
   .btn-accent {
