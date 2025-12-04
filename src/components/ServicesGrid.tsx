@@ -31,7 +31,7 @@ const ServicesGrid = () => {
   return (
     <section id="servicios" className="bg-secondary pb-20 lg:pb-32">
       <div className="container-section">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
           {services.map((service, index) => (
             <div
               key={service.title}
