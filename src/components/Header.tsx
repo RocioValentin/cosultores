@@ -1,5 +1,6 @@
 import { Phone, MessageCircle, Menu, X, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 interface DropdownItem {
   label: string;
@@ -13,27 +14,27 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "Inicio", href: "#" },
+  { label: "Inicio", href: "/" },
   {
     label: "Servicios",
-    href: "#servicios",
+    href: "/servicios",
     dropdown: [
-      { label: "Consultorías", href: "#servicios" },
-      { label: "Capacitaciones", href: "#servicios" },
-      { label: "Implementaciones", href: "#servicios" },
-      { label: "Auditorías", href: "#servicios" },
+      { label: "Consultorías", href: "/servicios" },
+      { label: "Capacitaciones", href: "/servicios" },
+      { label: "Implementaciones", href: "/servicios" },
+      { label: "Auditorías", href: "/servicios" },
     ],
   },
   {
     label: "Cursos",
-    href: "#cursos",
+    href: "/servicios",
     dropdown: [
-      { label: "Cursos", href: "#cursos" },
-      { label: "Programas", href: "#programas" },
-      { label: "Especializaciones", href: "#especializaciones" },
+      { label: "Cursos", href: "/servicios" },
+      { label: "Programas", href: "/servicios" },
+      { label: "Especializaciones", href: "/servicios" },
     ],
   },
-  { label: "Tienda", href: "#tienda" },
+  { label: "Tienda", href: "/servicios" },
   { label: "Nosotros", href: "/nosotros" },
   { label: "Contacto", href: "/contacto" },
 ];
@@ -78,7 +79,7 @@ const Header = () => {
       <div className="container-section">
         <div className="flex items-center justify-between">
           {/* Logo - Supports image */}
-          <a href="#" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-xl bg-background flex items-center justify-center shadow-soft overflow-hidden">
               {/* Replace with <img src="/logo.png" alt="CORMA Logo" className="w-full h-full object-contain" /> */}
               <span className="text-primary font-heading font-bold text-xl">C</span>
@@ -87,7 +88,7 @@ const Header = () => {
               <span className="font-heading font-bold text-xl tracking-wide">CORMA</span>
               <span className="block text-xs text-primary-foreground/70 tracking-widest uppercase">Consultores</span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
@@ -98,26 +99,27 @@ const Header = () => {
                 onMouseEnter={() => item.dropdown && handleMouseEnter(item.label)}
                 onMouseLeave={handleMouseLeave}
               >
-                <a
-                  href={item.href}
-                  onClick={(e) => {
-                    if (item.dropdown) {
-                      e.preventDefault();
-                      handleClick(item.label);
-                    }
-                  }}
-                  className={`flex items-center gap-1 px-4 py-2 rounded-lg text-primary-foreground/90 hover:text-primary-foreground hover:bg-primary-foreground/10 font-medium transition-all duration-200 ${
-                    openDropdown === item.label ? "bg-primary-foreground/10 text-primary-foreground" : ""
-                  }`}
-                >
-                  {item.label}
-                  {item.dropdown && (
+                {item.dropdown ? (
+                  <button
+                    onClick={() => handleClick(item.label)}
+                    className={`flex items-center gap-1 px-4 py-2 rounded-lg text-primary-foreground/90 hover:text-primary-foreground hover:bg-primary-foreground/10 font-medium transition-all duration-200 ${
+                      openDropdown === item.label ? "bg-primary-foreground/10 text-primary-foreground" : ""
+                    }`}
+                  >
+                    {item.label}
                     <ChevronDown
                       size={16}
                       className={`transition-transform duration-200 ${openDropdown === item.label ? "rotate-180" : ""}`}
                     />
-                  )}
-                </a>
+                  </button>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className="flex items-center gap-1 px-4 py-2 rounded-lg text-primary-foreground/90 hover:text-primary-foreground hover:bg-primary-foreground/10 font-medium transition-all duration-200"
+                  >
+                    {item.label}
+                  </Link>
+                )}
 
                 {/* Dropdown Menu */}
                 {item.dropdown && (
@@ -129,13 +131,13 @@ const Header = () => {
                     }`}
                   >
                     {item.dropdown.map((dropdownItem) => (
-                      <a
+                      <Link
                         key={dropdownItem.label}
-                        href={dropdownItem.href}
+                        to={dropdownItem.href}
                         className="block px-4 py-3 text-primary-foreground/90 hover:bg-primary-foreground/10 hover:text-primary-foreground transition-colors duration-200"
                       >
                         {dropdownItem.label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -183,9 +185,9 @@ const Header = () => {
                     className="w-full flex items-center justify-between px-4 py-3 text-primary-foreground/90 hover:text-primary-foreground hover:bg-primary-foreground/10 rounded-lg font-medium transition-all duration-200"
                   >
                     {!item.dropdown ? (
-                      <a href={item.href} className="w-full text-left">
+                      <Link to={item.href} className="w-full text-left">
                         {item.label}
-                      </a>
+                      </Link>
                     ) : (
                       <>
                         <span>{item.label}</span>
@@ -203,13 +205,13 @@ const Header = () => {
                   {item.dropdown && mobileOpenDropdown === item.label && (
                     <div className="ml-4 mt-1 mb-2 border-l-2 border-primary-foreground/20 pl-4">
                       {item.dropdown.map((dropdownItem) => (
-                        <a
+                        <Link
                           key={dropdownItem.label}
-                          href={dropdownItem.href}
+                          to={dropdownItem.href}
                           className="block py-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors duration-200"
                         >
                           {dropdownItem.label}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}
