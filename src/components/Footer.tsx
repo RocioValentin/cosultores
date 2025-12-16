@@ -2,14 +2,14 @@ import { Facebook, Twitter, Linkedin, Phone, Mail, MapPin, ChevronRight } from "
 
 const Footer = () => {
   return (
-    <footer className="bg-background-soft pt-16 pb-8">
+    <footer className="bg-secondary pt-16 pb-8">
       <div className="container-section">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
           {/* Logo & Description */}
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center shadow-soft">
-                <span className="text-primary-foreground font-heading font-bold text-xl">C</span>
+              <div className="w-12 h-12 rounded-xl bg-background flex items-center justify-center shadow-soft">
+                <span className="text-primary font-heading font-bold text-xl">C</span>
               </div>
               <div>
                 <span className="font-heading font-bold text-xl text-primary tracking-wide">CORMA</span>
@@ -38,11 +38,17 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-bold text-foreground mb-5">Links principales</h4>
             <ul className="space-y-3">
-              {["Inicio", "Servicios", "Cursos", "Tienda", "Contacto"].map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+              {[
+                { label: "Inicio", href: "/" },
+                { label: "Servicios", href: "/#servicios" },
+                { label: "Cursos", href: "/#cursos" },
+                { label: "Tienda", href: "/#tienda" },
+                { label: "Contacto", href: "/contacto" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
                     <ChevronRight size={14} className="text-primary" />
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}
@@ -55,7 +61,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {["Consultoría", "Auditoría", "Implementación", "Capacitación", "Cursos Online"].map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                  <a href="/#servicios" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
                     <ChevronRight size={14} className="text-primary" />
                     {link}
                   </a>
@@ -70,18 +76,18 @@ const Footer = () => {
             <ul className="space-y-4">
               <li>
                 <a href="tel:+51906993769" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-3">
-                  <Phone size={18} className="text-primary" />
+                  <Phone size={18} className="text-accent" />
                   +51 906993769
                 </a>
               </li>
               <li>
                 <a href="mailto:info@cormaconsultores.com" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-3">
-                  <Mail size={18} className="text-primary" />
+                  <Mail size={18} className="text-accent" />
                   info@cormaconsultores.com
                 </a>
               </li>
               <li className="text-muted-foreground flex items-center gap-3">
-                <MapPin size={18} className="text-primary" />
+                <MapPin size={18} className="text-accent" />
                 Lima, Perú
               </li>
             </ul>
@@ -90,8 +96,8 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-border pt-8">
-          <p className="text-center text-muted-foreground text-sm">
-            © {new Date().getFullYear()} CORMA Consultores. Todos los derechos reservados.
+          <p className="text-center text-muted-foreground text-sm italic">
+            Copyright {new Date().getFullYear()}. Corma Consultores. All Rights Reserved.
           </p>
         </div>
       </div>
