@@ -35,7 +35,7 @@ const navItems: NavItem[] = [
   },
   { label: "Tienda", href: "#tienda" },
   { label: "Nosotros", href: "#nosotros" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 const Header = () => {
