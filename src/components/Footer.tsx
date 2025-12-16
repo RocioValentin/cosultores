@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Linkedin, Phone, Mail, MapPin, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -40,16 +41,16 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { label: "Inicio", href: "/" },
-                { label: "Servicios", href: "/#servicios" },
-                { label: "Cursos", href: "/#cursos" },
-                { label: "Tienda", href: "/#tienda" },
+                { label: "Servicios", href: "/servicios" },
+                { label: "Cursos", href: "/servicios" },
+                { label: "Tienda", href: "/servicios" },
                 { label: "Contacto", href: "/contacto" },
               ].map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                  <Link to={link.href} className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
                     <ChevronRight size={14} className="text-primary" />
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -61,10 +62,10 @@ const Footer = () => {
             <ul className="space-y-3">
               {["Consultoría", "Auditoría", "Implementación", "Capacitación", "Cursos Online"].map((link) => (
                 <li key={link}>
-                  <a href="/#servicios" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                  <Link to="/servicios" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
                     <ChevronRight size={14} className="text-primary" />
                     {link}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
