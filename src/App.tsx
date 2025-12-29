@@ -12,6 +12,9 @@ import Capacitaciones from "./pages/Capacitaciones";
 import Implementaciones from "./pages/Implementaciones";
 import Auditoria from "./pages/Auditoria";
 import Aprendizaje from "./pages/Aprendizaje";
+import Cursos from "./pages/Cursos";
+import Programas from "./pages/Programas";
+import Especializaciones from "./pages/Especializaciones";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +33,9 @@ const App = () => (
           <Route path="/servicios/implementaciones" element={<Implementaciones />} />
           <Route path="/servicios/auditoria" element={<Auditoria />} />
           <Route path="/aprendizaje" element={<Aprendizaje />} />
+          <Route path="/aprendizaje/cursos" element={<Cursos />} />
+          <Route path="/aprendizaje/programas" element={<Programas />} />
+          <Route path="/aprendizaje/especializaciones" element={<Especializaciones />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/nosotros" element={<Nosotros />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
