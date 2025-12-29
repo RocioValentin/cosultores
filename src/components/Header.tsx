@@ -26,12 +26,12 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    label: "Cursos",
-    href: "/servicios",
+    label: "Aprendizaje",
+    href: "/aprendizaje",
     dropdown: [
-      { label: "Cursos", href: "/servicios" },
-      { label: "Programas", href: "/servicios" },
-      { label: "Especializaciones", href: "/servicios" },
+      { label: "Cursos", href: "/aprendizaje/cursos" },
+      { label: "Programas", href: "/aprendizaje/programas" },
+      { label: "Especializaciones", href: "/aprendizaje/especializaciones" },
     ],
   },
   { label: "Tienda", href: "/servicios" },

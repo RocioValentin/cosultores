@@ -25,6 +25,11 @@
     --card-implementacion: 209 75% 48%;  /* #1D7DD8 */
     --card-auditoria: 122 52% 34%;       /* #2E7D32 */
     
+    /* Learning Card Hover Colors */
+    --card-cursos: 209 85% 30%;          /* #0A4D8C */
+    --card-programas: 122 39% 49%;       /* #4CAF50 */
+    --card-especializaciones: 209 75% 48%; /* #1D7DD8 */
+    
     /* Backgrounds */
     --background: 0 0% 100%;
     --foreground: 0 0% 18%;
@@ -159,6 +164,18 @@
 
   .service-card-auditoria:hover {
     @apply bg-[hsl(var(--card-auditoria))] text-white;
+  }
+
+  .learning-card-cursos:hover {
+    @apply bg-[hsl(var(--card-cursos))] text-white;
+  }
+
+  .learning-card-programas:hover {
+    @apply bg-[hsl(var(--card-programas))] text-white;
+  }
+
+  .learning-card-especializaciones:hover {
+    @apply bg-[hsl(var(--card-especializaciones))] text-white;
   }
 
   .icon-circle {
