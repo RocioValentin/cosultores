@@ -1,6 +1,8 @@
 import { Phone, MessageCircle, Menu, X, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/images/logo.png";
+import WhatsappIcon from "../assets/images/whatsapp.png";
 
 interface DropdownItem {
   label: string;
@@ -20,21 +22,21 @@ const navItems: NavItem[] = [
     href: "/servicios",
     dropdown: [
       { label: "Consultorías", href: "/servicios/consultorias" },
-      { label: "Capacitaciones", href: "/servicios/capacitaciones" },
+      // { label: "Capacitaciones", href: "/servicios/capacitaciones" },
       { label: "Implementaciones", href: "/servicios/implementaciones" },
       { label: "Auditorías", href: "/servicios/auditoria" },
     ],
   },
   {
-    label: "Aprendizaje",
-    href: "/aprendizaje",
+    label: "Capacitaciones",
+    href: "/capacitaciones",
     dropdown: [
-      { label: "Cursos", href: "/aprendizaje/cursos" },
-      { label: "Programas", href: "/aprendizaje/programas" },
-      { label: "Especializaciones", href: "/aprendizaje/especializaciones" },
+      { label: "Cursos", href: "/capacitaciones/cursos" },
+      { label: "Programas", href: "/capacitaciones/programas" },
+      { label: "Especializaciones", href: "/capacitaciones/especializaciones" },
     ],
   },
-  { label: "Tienda", href: "/servicios" },
+  // { label: "Tienda", href: "/servicios" },
   { label: "Nosotros", href: "/nosotros" },
   { label: "Contacto", href: "/contacto" },
 ];
@@ -80,14 +82,14 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo - Supports image */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-background flex items-center justify-center shadow-soft overflow-hidden">
-              {/* Replace with <img src="/logo.png" alt="CORMA Logo" className="w-full h-full object-contain" /> */}
-              <span className="text-primary font-heading font-bold text-xl">C</span>
+            <div className="w-20 h-20 rounded-xl bg-background flex items-center justify-center ml-5 shadow-md overflow-hidden">
+              <img src={logo} alt="CORMA Logo" className="w-full h-full object-contain" />
+              {/* <span className="text-primary font-heading font-bold text-xl">C</span> */}
             </div>
-            <div className="text-primary-foreground">
+            {/* <div className="text-primary-foreground">
               <span className="font-heading font-bold text-xl tracking-wide">CORMA</span>
               <span className="block text-xs text-primary-foreground/70 tracking-widest uppercase">Consultores</span>
-            </div>
+            </div> */}
           </Link>
 
           {/* Desktop Navigation */}
@@ -160,7 +162,8 @@ const Header = () => {
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-accent flex items-center justify-center hover:bg-accent-dark transition-all duration-200"
             >
-              <MessageCircle size={20} className="text-accent-foreground" />
+              <img src={WhatsappIcon} alt="WhatsApp Icon" className="w-full h-full text-foreground" />
+              {/* <MessageCircle size={20} className="text-accent-foreground" /> */}
             </a>
           </div>
 
