@@ -28,10 +28,11 @@ const Contacto = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
-      
-      {/* Hero Section */}
-      <section className="navbar-gradient py-20 lg:py-32">
+      <div className="hero-gradient">
+        <Header />
+        
+        {/* Hero Section */}
+        <section className="py-20 lg:py-32">
         <div className="container-section text-center">
           <h1 className="text-4xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6">
             Contacto
@@ -42,7 +43,8 @@ const Contacto = () => {
             <span>Contacto</span>
           </div>
         </div>
-      </section>
+        </section>
+      </div>
 
       {/* Contact Content */}
       <section className="py-16 lg:py-24 bg-background">

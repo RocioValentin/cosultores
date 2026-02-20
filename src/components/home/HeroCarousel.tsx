@@ -78,7 +78,7 @@ const HeroCarousel = () => {
   const slide = slides[currentSlide];
 
   return (
-    <section className="hero-gradient min-h-[600px] lg:min-h-[700px] relative overflow-hidden">
+    <section className="min-h-[600px] lg:min-h-[700px] relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute right-0 top-0 w-1/2 h-full opacity-20">
         <div className="absolute right-20 top-20 w-64 h-64 rounded-full border border-primary-foreground/20" />
