@@ -100,12 +100,22 @@ export default {
           from: { opacity: "0", transform: "translateX(20px)" },
           to: { opacity: "1", transform: "translateX(0)" },
         },
+        "float": {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-15px)' },
+        },
+        "riseOnce": {
+          '0%': { transform: 'translateY(40px)', opacity: '0' },
+          '100%': { transform: 'translateY(0px)', opacity: '1' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.6s ease-out forwards",
         "slide-in-right": "slide-in-right 0.5s ease-out forwards",
+        "float": 'float 4s ease-in-out infinite',
+        "riseOnce": 'riseOnce 1s ease-out forwards',
       },
     },
   },

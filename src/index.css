@@ -6,36 +6,36 @@
 
 @layer base {
   :root {
-    /* Corporate Blues - #0A4D8C */
-    --primary: 209 85% 30%;
+    /* Corporate Blues - #054899 */
+    --primary: 213 94% 31%;
     --primary-foreground: 0 0% 100%;
-    --primary-dark: 209 90% 20%;
+    --primary-dark: 213 94% 22%;
     /* Blue Light / Hover - #1D7DD8 */
-    --primary-light: 209 75% 48%;
+    --primary-light: 213 85% 45%; 
     
-    /* Corporate Greens - #4CAF50 */
-    --accent: 122 39% 49%;
+    /* Corporate Greens - #17a358 */
+    --accent: 146 75% 36%;
     --accent-foreground: 0 0% 100%;
     /* Green Hover - #2E7D32 */
-    --accent-dark: 122 52% 34%;
+    --accent-dark: 146 70% 28%;
     
     /* Service Card Hover Colors */
-    --card-consultoria: 209 85% 30%;     /* #0A4D8C */
-    --card-capacitacion: 122 39% 49%;    /* #4CAF50 */
-    --card-implementacion: 209 75% 48%;  /* #1D7DD8 */
-    --card-auditoria: 122 52% 34%;       /* #2E7D32 */
+    --card-consultoria: 213 94% 31%;     /* #0A4D8C */
+    --card-capacitacion: 146 75% 36%;    /* #4CAF50 */
+    --card-implementacion: 213 85% 45%;  /* #1D7DD8 */
+    --card-auditoria: 146 70% 28%;      /* #2E7D32 */
     
     /* Learning Card Hover Colors */
-    --card-cursos: 209 85% 30%;          /* #0A4D8C */
-    --card-programas: 122 39% 49%;       /* #4CAF50 */
-    --card-especializaciones: 209 75% 48%; /* #1D7DD8 */
+    --card-cursos: 213 94% 31%;         /* #0A4D8C */
+    --card-programas: 146 75% 36%;       /* #4CAF50 */
+    --card-especializaciones: 213 85% 45%; /* #1D7DD8 */
     
     /* Backgrounds */
-    --background: 0 0% 100%;
+    --background: 210 40% 98%;
     --foreground: 0 0% 18%;
     /* Blue Pastel - #F4F9FF */
     --background-soft: 213 100% 98%;
-    --background-hero: 209 85% 30%;
+    --background-hero: 213 94% 31%;
     
     /* Gray Scale */
     /* Gray Dark #2E2E2E */
@@ -43,7 +43,7 @@
     /* Gray Medium #6E6E6E */
     --gray-medium: 0 0% 43%;
     /* Gray Light #E9ECEF */
-    --gray-light: 210 14% 93%;
+    --gray-light: 213 94% 31%;
     
     /* Cards & Surfaces */
     --card: 0 0% 100%;
@@ -58,9 +58,9 @@
     --muted-foreground: 0 0% 43%;
     
     /* Borders & Inputs */
-    --border: 210 14% 88%;
-    --input: 210 14% 93%;
-    --ring: 209 85% 30%;
+    --border: 213 94% 31%;
+    --input: 213 94% 31%;
+    --ring: 213 94% 31%;
     
     /* Destructive */
     --destructive: 0 84% 60%;
