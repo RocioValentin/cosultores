@@ -109,7 +109,7 @@ const HomeFAQSection = () => {
           <div className="relative">
             <div className="bg-background rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-heading font-bold text-foreground text-center mb-2">
-                Diagnóstico gratuito
+                Asesoramiento gratuito
               </h3>
               <p className="text-muted-foreground text-center mb-8">
                 Te ayudamos a determinar lo que tu empresa necesita para crecer.

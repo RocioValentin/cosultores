@@ -1,26 +1,31 @@
-import { Users, GraduationCap, ClipboardCheck, Search, ArrowUpRight } from "lucide-react";
+import { Users, GraduationCap, ClipboardCheck, Search, FlaskConical, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
   {
     icon: Users,
-    title: "Consultorías",
+    title: "Consultoría ISO 17025",
     description: "Guiamos a su empresa en la acreditación y certificación ISO, adaptándonos a sus necesidades específicas.",
   },
   {
     icon: GraduationCap,
-    title: "Capacitaciones",
+    title: "Capacitaciones técnicas",
     description: "Capacitación in-house personalizada y práctica para su equipo en su lugar de trabajo.",
   },
   {
     icon: ClipboardCheck,
-    title: "Implementaciones",
+    title: "Sistemas de gestión (ISO 9001 - 14001 - 45001)",
     description: "Ayudamos a implementar y mantener la Norma ISO 17025 en su laboratorio para asegurar sus resultados.",
   },
   {
     icon: Search,
-    title: "Auditorías",
+    title: "Auditorías Internas",
     description: "Nuestra auditoría interna asegura calidad y precisión en su laboratorio mediante una revisión meticulosa de procesos.",
+  },
+  {
+    icon: FlaskConical,
+    title: "Equipos y Reactivos",
+    description: "Suministro de equipos y reactivos de alta calidad para laboratorios de ensayo y calibración.",
   },
 ];
 
@@ -70,12 +75,12 @@ const HomeServicesSection = () => {
                 <p className="text-muted-foreground text-center text-sm leading-relaxed mb-4">
                   {service.description}
                 </p>
-                <Link
+                {/* <Link
                   to="/servicios"
                   className="block text-center text-accent font-semibold uppercase text-sm tracking-wide hover:text-primary transition-colors"
                 >
                   VER MÁS
-                </Link>
+                </Link> */}
               </div>
             ))}
           </div>

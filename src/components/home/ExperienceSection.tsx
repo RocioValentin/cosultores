@@ -1,10 +1,12 @@
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "../../assets/images/logoblanco.jpg";
 
 const features = [
-  "Experiencia especializada con años de trayectoria en la industria",
-  "Soluciones integrales adaptadas a cada cliente.",
-  "Compromiso con la calidad y estándares internacionales.",
+  "Especialistas en laboratorios de ensayo y calibracióna",
+  "Enfoque práctico y orientado a acreditación",
+  "Experiencia en ISO/IEC 17025 y trinorma",
+  "Metodología clara y acompañamiento real",
 ];
 
 const ExperienceSection = () => {
@@ -14,9 +16,10 @@ const ExperienceSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left - Image Placeholder */}
           <div className="relative">
-            <div className="aspect-[3/4] bg-background rounded-2xl overflow-hidden shadow-soft max-w-md mx-auto">
+            <div className="aspect-[4/4] bg-background rounded-2xl overflow-hidden shadow-soft max-w-md mx-auto">
               <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                <span className="text-muted-foreground">Imagen de experiencia</span>
+                <img src={logo} alt="CORMA Logo" className="w-full h-full object-contain" />
+                {/* <span className="text-muted-foreground">Imagen de experiencia</span> */}
               </div>
             </div>
           </div>
@@ -24,7 +27,7 @@ const ExperienceSection = () => {
           {/* Right - Content */}
           <div>
             <span className="text-primary font-semibold uppercase tracking-widest text-sm mb-4 block">
-              NUESTRA EXPERIENCIA
+              ¿POR QUÉ CORMA?
             </span>
             <h2 className="text-3xl lg:text-5xl font-heading font-bold text-foreground mb-6 leading-tight">
               Brindamos servicios y productos a laboratorios de ensayo, calibración y clínico

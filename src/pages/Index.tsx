@@ -16,13 +16,13 @@ const Index = () => {
       <Header />
       <main>
         <HeroCarousel />
-        <CoursesSection />
-        <HomeServicesSection />
-        <ProductsSection />
-        <OnlineCoursesCarousel />
         <ExperienceSection />
+        <HomeServicesSection />
         <HomeTestimonialsSection />
         <HomeFAQSection />
+        {/* <CoursesSection />
+        <ProductsSection />
+        <OnlineCoursesCarousel /> */}
       </main>
       <Footer />
       <WhatsAppButton />

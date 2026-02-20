@@ -6,7 +6,7 @@ const LearningHeroSection = () => {
     <section className="hero-gradient py-20 lg:py-32">
       <div className="container-section text-center">
         <h1 className="text-5xl lg:text-7xl font-heading font-bold text-primary-foreground mb-6 animate-fade-in">
-          Aprendizaje
+          Capacitaciones
         </h1>
         <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
           Formación especializada para el desarrollo de competencias técnicas.
@@ -19,7 +19,7 @@ const LearningHeroSection = () => {
           </Link>
           <ChevronRight size={16} className="text-primary-foreground/60" />
           <ChevronRight size={16} className="text-primary-foreground/60 -ml-3" />
-          <span className="text-primary-foreground font-medium">Aprendizaje</span>
+          <span className="text-primary-foreground font-medium">Capacitaciones</span>
         </div>
       </div>
     </section>
