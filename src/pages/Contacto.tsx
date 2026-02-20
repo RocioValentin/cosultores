@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Phone, Mail, MapPin, ArrowUpRight, ChevronsRight } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -31,17 +31,15 @@ const Contacto = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="hero-gradient py-20 lg:py-32">
+      <section className="navbar-gradient py-20 lg:py-32">
         <div className="container-section text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
+          <h1 className="text-4xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6">
             Contacto
           </h1>
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-primary-foreground/20 bg-primary-foreground/5">
-            <a href="/" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-              Inicio
-            </a>
-            <ChevronsRight size={18} className="text-primary-foreground/60" />
-            <span className="text-primary-foreground">Contacto</span>
+          <div className="inline-flex items-center gap-2 bg-primary/80 px-6 py-3 rounded-full text-primary-foreground">
+            <a href="/" className="hover:underline">Inicio</a>
+            <span className="text-xl">»</span>
+            <span>Contacto</span>
           </div>
         </div>
       </section>
@@ -67,8 +65,9 @@ const Contacto = () => {
                   </div>
                   <div className="border-l-2 border-accent pl-5">
                     <h3 className="font-bold text-foreground text-lg mb-2">Teléfono:</h3>
+                    <p className="text-muted-foreground">(+51 972 103 384)</p>
                     <p className="text-muted-foreground">(+51 906 993 769)</p>
-                    <p className="text-muted-foreground">(+800 2345 6789)</p>
+                    <p className="text-muted-foreground">(+51 956 341 568)</p>
                   </div>
                 </div>
 
@@ -79,8 +78,8 @@ const Contacto = () => {
                   </div>
                   <div className="border-l-2 border-accent pl-5">
                     <h3 className="font-bold text-foreground text-lg mb-2">Email:</h3>
-                    <p className="text-muted-foreground">info@cormaconsult.com</p>
-                    <p className="text-muted-foreground">cormaconsult@gmail.com</p>
+                    <p className="text-muted-foreground">info@cormaconsultores.com</p>
+                    {/* <p className="text-muted-foreground">cormaconsult@gmail.com</p> */}
                   </div>
                 </div>
 
@@ -91,7 +90,7 @@ const Contacto = () => {
                   </div>
                   <div className="border-l-2 border-accent pl-5">
                     <h3 className="font-bold text-foreground text-lg mb-2">Ubicación:</h3>
-                    <p className="text-muted-foreground">Presencial: Lima, Perú.</p>
+                    <p className="text-muted-foreground">Presencial: Av. Buenos Aires N° 115 – Puente Piedra. Lima, Perú.</p>
                     <p className="text-muted-foreground">Virtual: Latinoamérica.</p>
                   </div>
                 </div>

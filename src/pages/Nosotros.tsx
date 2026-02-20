@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
+import slideImage1 from "../assets/images/carrusel1.jpg";
 
 const industries = [
   {
@@ -229,7 +230,7 @@ const Nosotros = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1581093458791-9f3c3ae82f38?w=600&h=500&fit=crop"
+                src={slideImage1}
                 alt="Científico en laboratorio"
                 className="w-full rounded-xl"
               />
@@ -248,7 +249,7 @@ const Nosotros = () => {
               </h2>
               <div className="flex flex-wrap gap-4 mt-8">
                 <a
-                  href="/contacto"
+                  href="https://wa.me/51906993769"
                   className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-full font-semibold hover:bg-accent/90 transition-colors"
                 >
                   Contáctanos
