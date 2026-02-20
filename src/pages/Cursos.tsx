@@ -52,10 +52,10 @@ const Cursos = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-      <main>
+      <div className="hero-gradient">
+        <Header />
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-[#0a1628] via-[#0d2847] to-[#0a1628] py-24 md:py-32">
+        <section className="relative py-24 md:py-32">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 italic">
               Cursos
@@ -74,7 +74,8 @@ const Cursos = () => {
             </div>
           </div>
         </section>
-
+      </div>
+      <main>
         {/* Intro Section */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">

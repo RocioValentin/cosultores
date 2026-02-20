@@ -2,7 +2,7 @@ import { ChevronRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="hero-gradient py-20 lg:py-32">
+    <section className="py-20 lg:py-32">
       <div className="container-section text-center">
         <h1 className="text-5xl lg:text-7xl font-heading font-bold text-primary-foreground mb-6 animate-fade-in">
           Servicios

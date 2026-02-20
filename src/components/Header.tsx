@@ -77,7 +77,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="navbar-gradient py-4 relative z-50">
+    <header className="bg-transparent py-4 relative z-50">
       <div className="container-section">
         <div className="flex items-center justify-between">
           {/* Logo - Supports image */}

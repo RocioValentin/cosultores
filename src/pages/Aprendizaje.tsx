@@ -10,9 +10,11 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 const Aprendizaje = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-      <main>
+      <div className="hero-gradient">
+        <Header />
         <LearningHeroSection />
+      </div>
+      <main>
         <LearningIntro />
         <LearningGrid />
         <TestimonialSection />
