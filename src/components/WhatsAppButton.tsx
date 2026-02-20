@@ -1,4 +1,5 @@
 import { MessageCircle } from "lucide-react";
+import WhatsappIcon from "../assets/images/whatsapp.png";
 
 const WhatsAppButton = () => {
   return (
@@ -9,7 +10,8 @@ const WhatsAppButton = () => {
       className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-accent hover:bg-accent-dark rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110"
       aria-label="Contactar por WhatsApp"
     >
-      <MessageCircle size={28} className="text-accent-foreground" />
+      <img src={WhatsappIcon} alt="WhatsApp Icon" className="w-full h-full text-foreground" />
+      {/* <MessageCircle size={28} className="text-accent-foreground" /> */}
     </a>
   );
 };
