@@ -21,10 +21,9 @@ const navItems: NavItem[] = [
     label: "Servicios",
     href: "/servicios",
     dropdown: [
-      { label: "Consultorías", href: "/servicios/consultorias" },
-      // { label: "Capacitaciones", href: "/servicios/capacitaciones" },
-      { label: "Implementaciones", href: "/servicios/implementaciones" },
-      { label: "Auditorías", href: "/servicios/auditoria" },
+      { label: "Consultorías", href: "/servicios#consultorias" },
+      { label: "Implementaciones", href: "/servicios#implementaciones" },
+      { label: "Auditorías", href: "/servicios#auditoria" },
     ],
   },
   {

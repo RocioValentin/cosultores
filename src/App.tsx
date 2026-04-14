@@ -28,10 +28,6 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/servicios" element={<Servicios />} />
-          <Route path="/servicios/consultorias" element={<Consultorias />} />
-          {/* <Route path="/servicios/capacitaciones" element={<Capacitaciones />} /> */}
-          <Route path="/servicios/implementaciones" element={<Implementaciones />} />
-          <Route path="/servicios/auditoria" element={<Auditoria />} />
           <Route path="/Capacitaciones" element={<Aprendizaje />} />
           <Route path="/Capacitaciones/cursos" element={<Cursos />} />
           <Route path="/Capacitaciones/programas" element={<Programas />} />
