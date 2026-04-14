@@ -8,10 +8,7 @@ import Servicios from "./pages/Servicios";
 import Contacto from "./pages/Contacto";
 import Nosotros from "./pages/Nosotros";
 // Legacy service sub-pages removed — unified into /servicios
-import Aprendizaje from "./pages/Aprendizaje";
-import Cursos from "./pages/Cursos";
-import Programas from "./pages/Programas";
-import Especializaciones from "./pages/Especializaciones";
+import Capacitaciones from "./pages/Capacitaciones";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,10 +22,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/servicios" element={<Servicios />} />
-          <Route path="/Capacitaciones" element={<Aprendizaje />} />
-          <Route path="/Capacitaciones/cursos" element={<Cursos />} />
-          <Route path="/Capacitaciones/programas" element={<Programas />} />
-          <Route path="/Capacitaciones/especializaciones" element={<Especializaciones />} />
+          <Route path="/capacitaciones" element={<Capacitaciones />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/nosotros" element={<Nosotros />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

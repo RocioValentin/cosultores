@@ -30,9 +30,9 @@ const navItems: NavItem[] = [
     label: "Capacitaciones",
     href: "/capacitaciones",
     dropdown: [
-      { label: "Cursos", href: "/capacitaciones/cursos" },
-      { label: "Programas", href: "/capacitaciones/programas" },
-      { label: "Especializaciones", href: "/capacitaciones/especializaciones" },
+      { label: "Cursos", href: "/capacitaciones#cursos" },
+      { label: "Programas", href: "/capacitaciones#programas" },
+      { label: "Especializaciones", href: "/capacitaciones#especializaciones" },
     ],
   },
   // { label: "Tienda", href: "/servicios" },
