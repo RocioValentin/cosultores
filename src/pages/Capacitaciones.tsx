@@ -1,186 +1,302 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { Link } from "react-router-dom";
-import { ArrowUpRight, ChevronRight, BookOpen, Users, Award, Target, Lightbulb, TrendingUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
+  ArrowUpRight, ChevronRight, BookOpen, Video, Users, Clock, Target, CheckCircle,
+  CheckCircle2, Layers, Calendar, TrendingUp, Award, GraduationCap,
+  Star, Briefcase, Trophy
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 const Capacitaciones = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: ""
-  });
+  const location = useLocation();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Mensaje enviado",
-      description: "Nos pondremos en contacto contigo pronto.",
-    });
-    setFormData({ name: "", email: "", phone: "", message: "" });
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+      }
+    }
+  }, [location.hash]);
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const beneficios = [
-    { icon: BookOpen, title: "Contenido Actualizado", description: "Material basado en las últimas normativas y mejores prácticas" },
-    { icon: Users, title: "Instructores Expertos", description: "Profesionales con amplia experiencia en el sector" },
-    { icon: Award, title: "Certificación", description: "Obtén certificados reconocidos en la industria" },
-    { icon: Target, title: "Enfoque Práctico", description: "Casos reales y ejercicios aplicables" },
-    { icon: Lightbulb, title: "Metodología Innovadora", description: "Técnicas de aprendizaje efectivas" },
-    { icon: TrendingUp, title: "Mejora Continua", description: "Actualización constante de conocimientos" },
+  const capacitacionCards = [
+    { id: "cursos", icon: BookOpen, title: "Cursos", description: "Capacitación técnica práctica" },
+    { id: "programas", icon: Layers, title: "Programas", description: "Formación integral estructurada" },
+    { id: "especializaciones", icon: Award, title: "Especializaciones", description: "Formación avanzada de élite" },
   ];
 
-  const faqs = [
-    { question: "¿Cuánto duran los cursos de capacitación?", answer: "La duración varía según el curso, desde talleres de 8 horas hasta programas completos de varias semanas." },
-    { question: "¿Las capacitaciones son presenciales o virtuales?", answer: "Ofrecemos ambas modalidades, adaptándonos a las necesidades de cada organización." },
-    { question: "¿Qué certificación se obtiene al finalizar?", answer: "Se entrega un certificado de participación avalado por CORMA Consultores con validez profesional." },
-    { question: "¿Pueden hacer capacitaciones in-company?", answer: "Sí, diseñamos programas personalizados para empresas en sus instalaciones." },
-    { question: "¿Cuáles son los requisitos previos?", answer: "Depende del nivel del curso. Los cursos básicos no requieren conocimientos previos." },
+  const modalidadesCursos = [
+    { icon: Video, title: "Virtual en vivo", description: "Clases sincrónicas con interacción directa" },
+    { icon: BookOpen, title: "Virtual asincrónico", description: "Aprende a tu propio ritmo" },
+    { icon: Users, title: "Presencial", description: "Formación práctica en aula" },
+    { icon: Clock, title: "Híbrido", description: "Combina lo mejor de ambos mundos" },
+    { icon: Target, title: "In-house", description: "Capacitación en tu empresa" },
+    { icon: CheckCircle, title: "Certificado", description: "Obtén tu certificación al finalizar" },
   ];
+
+  const caracteristicasProgramas = [
+    { icon: Layers, title: "Módulos integrados", description: "Contenido estructurado en módulos progresivos" },
+    { icon: Calendar, title: "Duración extendida", description: "Programas de 3 a 6 meses de formación" },
+    { icon: TrendingUp, title: "Desarrollo continuo", description: "Seguimiento y evaluación constante" },
+    { icon: Award, title: "Certificación integral", description: "Diploma de programa completo" },
+    { icon: Users, title: "Comunidad", description: "Networking con profesionales del sector" },
+    { icon: BookOpen, title: "Recursos exclusivos", description: "Acceso a biblioteca digital especializada" },
+  ];
+
+  const beneficiosEspecializaciones = [
+    { icon: Award, title: "Certificación avanzada", description: "Diploma de especialista reconocido" },
+    { icon: Target, title: "Enfoque profundo", description: "Dominio completo del área elegida" },
+    { icon: Star, title: "Exclusividad", description: "Grupos reducidos de alto nivel" },
+    { icon: Briefcase, title: "Aplicación directa", description: "Proyectos con empresas reales" },
+    { icon: GraduationCap, title: "Mentoría experta", description: "Acompañamiento de líderes del sector" },
+    { icon: Trophy, title: "Reconocimiento", description: "Posicionamiento como experto" },
+  ];
+
+  const CardsGrid = ({ items }: { items: { icon: React.ElementType; title: string; description: string }[] }) => (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-12">
+      {items.map((item, index) => (
+        <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+          <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            <item.icon className="w-10 h-10 text-primary" strokeWidth={1.5} />
+          </div>
+          <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
+          <p className="text-sm text-muted-foreground">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-background">
       <div className="hero-gradient">
         <Header />
-        {/* Hero Section */}
-        <section className="relative py-24 md:py-32">
+        {/* Hero */}
+        <section className="py-20 lg:py-32">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 italic">
+            <h1 className="text-5xl lg:text-7xl font-heading font-bold text-primary-foreground mb-6 animate-fade-in">
               Capacitaciones
             </h1>
-            <div className="inline-flex items-center gap-2 bg-[#0d2847]/50 border border-white/20 rounded-full px-6 py-3 text-white/90">
-              <Link to="/" className="hover:text-white transition-colors">Inicio</Link>
-              <ChevronRight className="w-4 h-4" />
-              <ChevronRight className="w-4 h-4 -ml-2" />
-              <Link to="/servicios" className="hover:text-white transition-colors">Servicios</Link>
-              <ChevronRight className="w-4 h-4" />
-              <ChevronRight className="w-4 h-4 -ml-2" />
-              <span>Capacitaciones</span>
+            <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              Formamos profesionales competentes para la gestión de calidad en laboratorios.
+            </p>
+            <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-primary-foreground/20 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <Link to="/" className="text-primary-foreground/90 hover:text-primary-foreground transition-colors">Inicio</Link>
+              <ChevronRight size={16} className="text-primary-foreground/60" />
+              <ChevronRight size={16} className="text-primary-foreground/60 -ml-3" />
+              <span className="text-primary-foreground font-medium">Capacitaciones</span>
             </div>
           </div>
         </section>
       </div>
+
       <main>
-        {/* Intro Section */}
-        <section className="py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
-              <div>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0a1628] leading-tight">
-                  Formamos profesionales competentes para la gestión de calidad en laboratorios.
-                </h2>
-              </div>
-              <div>
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  En CORMA Consultores, ofrecemos programas de capacitación diseñados para fortalecer las competencias técnicas y de gestión de su equipo. Nuestros cursos están desarrollados por expertos en normativas internacionales y adaptados a las necesidades específicas de cada organización.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Image Section */}
-        <section className="px-4 md:px-8">
-          <div className="container mx-auto">
-            <div className="rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&h=600&fit=crop"
-                alt="Capacitación profesional"
-                className="w-full h-[400px] md:h-[500px] object-cover"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Capacitación Especializada */}
-        <section className="py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0a1628] mb-6">
-              CAPACITACIÓN ESPECIALIZADA
+        {/* Intro + Quick Nav Cards */}
+        <section className="py-16 lg:py-24">
+          <div className="container mx-auto px-4 text-center">
+            <span className="text-accent font-semibold uppercase tracking-widest text-sm">Nuestra oferta formativa</span>
+            <h2 className="text-3xl lg:text-5xl font-heading font-bold text-foreground mt-4 mb-6">
+              Capacitación integral<br />
+              <span className="text-primary">para tu desarrollo profesional</span>
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed max-w-4xl">
-              Nuestros programas de formación abarcan desde conceptos fundamentales hasta técnicas avanzadas en sistemas de gestión de calidad, metrología, validación de métodos y auditorías internas. Cada curso está diseñado para proporcionar herramientas prácticas aplicables inmediatamente en su entorno laboral.
-            </p>
-          </div>
-        </section>
-
-        {/* Beneficios Section */}
-        <section className="py-16 md:py-24 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0a1628] mb-6">
-              BENEFICIOS DE NUESTRAS CAPACITACIONES
-            </h2>
-            <p className="text-gray-600 mb-4">
-              Invertir en la formación de su equipo es invertir en el éxito de su organización. Nuestras capacitaciones están diseñadas para generar impacto real en sus operaciones.
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed mb-12">
+              En CORMA Consultores ofrecemos cursos, programas y especializaciones diseñados para
+              fortalecer las competencias técnicas y de gestión de tu equipo.
             </p>
 
-            {/* Beneficios Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-12">
-              {beneficios.map((beneficio, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <beneficio.icon className="w-10 h-10 text-[#0a1628]" strokeWidth={1.5} />
+            {/* Clickable Cards */}
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {capacitacionCards.map((card) => (
+                <button
+                  key={card.id}
+                  onClick={() => scrollTo(card.id)}
+                  className="group bg-card rounded-2xl p-8 shadow-sm hover:shadow-xl border border-border hover:border-primary/30 transition-all duration-300 text-center"
+                >
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                    <card.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
                   </div>
-                  <h4 className="font-semibold text-[#0a1628] mb-2">{beneficio.title}</h4>
-                  <p className="text-sm text-gray-600">{beneficio.description}</p>
-                </div>
+                  <h3 className="font-heading font-bold text-xl text-foreground mb-2">{card.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{card.description}</p>
+                  <span className="text-accent font-semibold text-sm flex items-center justify-center gap-1">
+                    Ver más <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </button>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Áreas de Capacitación Section */}
-        <section className="py-16 md:py-24">
+        {/* ═══════ CURSOS ═══════ */}
+        <section id="cursos" className="scroll-mt-24 py-16 md:py-24 bg-secondary/50">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0a1628] mb-8">
-              ÁREAS DE CAPACITACIÓN
-            </h2>
-            
-            <div className="space-y-8">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start mb-12">
               <div>
-                <h3 className="text-xl font-semibold text-[#0a1628] mb-2">
-                  Sistemas de Gestión de Calidad
-                </h3>
-                <p className="text-gray-600">
-                  <span className="font-semibold text-[#0a1628]">Incluye:</span> ISO 9001, ISO/IEC 17025, Buenas Prácticas de Laboratorio (BPL) y gestión documental.
+                <span className="text-accent font-semibold uppercase tracking-widest text-sm">01</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 leading-tight">
+                  Cursos
+                </h2>
+              </div>
+              <div>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Capacitación técnica práctica orientada a la mejora continua. Nuestros cursos están diseñados para proporcionar conocimientos sólidos y habilidades prácticas aplicables inmediatamente en tu entorno laboral.
                 </p>
               </div>
+            </div>
 
-              <div>
-                <h3 className="text-xl font-semibold text-[#0a1628] mb-2">
-                  Metrología y Calibración
-                </h3>
-                <p className="text-gray-600">
-                  <span className="font-semibold text-[#0a1628]">Incluye:</span> Fundamentos de metrología, incertidumbre de medición, calibración de equipos y trazabilidad metrológica.
-                </p>
-              </div>
+            <div className="rounded-2xl overflow-hidden mb-12">
+              <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&h=500&fit=crop" alt="Curso en aula" className="w-full h-[350px] md:h-[450px] object-cover" />
+            </div>
 
-              <div>
-                <h3 className="text-xl font-semibold text-[#0a1628] mb-2">
-                  Auditorías y Mejora Continua
-                </h3>
-                <p className="text-gray-600">
-                  <span className="font-semibold text-[#0a1628]">Incluye:</span> Formación de auditores internos, técnicas de auditoría, análisis de causa raíz y acciones correctivas.
-                </p>
+            {/* Áreas */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-foreground mb-6">Áreas de Formación</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {[
+                  "Gestión de Calidad en Laboratorios (ISO 17025)",
+                  "Metrología y Calibración",
+                  "Aseguramiento de la Calidad Analítica",
+                  "Auditorías Internas y Gestión de No Conformidades"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3 bg-card rounded-lg p-4 border border-border">
+                    <div className="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <CheckCircle2 className="w-5 h-5 text-accent" />
+                    </div>
+                    <span className="text-foreground">{item}</span>
+                  </div>
+                ))}
               </div>
+            </div>
+
+            {/* Modalidades */}
+            <h3 className="text-2xl font-bold text-foreground mb-2">Modalidades de Formación</h3>
+            <p className="text-muted-foreground mb-4">Flexibilidad para adaptarnos a tus necesidades.</p>
+            <CardsGrid items={modalidadesCursos} />
+
+            {/* CTA */}
+            <div className="mt-12 text-center">
+              <Link to="/contacto">
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-4 h-auto font-medium text-lg">
+                  Inscríbete a un Curso
+                  <ArrowUpRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="relative bg-gradient-to-br from-[#0a1628] via-[#0d2847] to-[#0a1628] py-16 md:py-24">
+        {/* ═══════ PROGRAMAS ═══════ */}
+        <section id="programas" className="scroll-mt-24 py-16 md:py-24">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start mb-12">
+              <div>
+                <span className="text-accent font-semibold uppercase tracking-widest text-sm">02</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 leading-tight">
+                  Programas
+                </h2>
+              </div>
+              <div>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Formación estructurada para el desarrollo integral de competencias. Cada programa combina teoría, práctica y aplicación real, permitiendo un desarrollo profesional profundo y sostenido en el tiempo.
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden mb-12">
+              <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&h=500&fit=crop" alt="Programa de formación" className="w-full h-[350px] md:h-[450px] object-cover" />
+            </div>
+
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-foreground mb-6">Programas Disponibles</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                {[
+                  { title: "Gestión de Calidad de Laboratorios", desc: "4 meses · Virtual sincrónico con sesiones prácticas presenciales." },
+                  { title: "Auditor Interno de Laboratorios", desc: "3 meses · Híbrido con talleres prácticos de auditoría." },
+                  { title: "Metrología Aplicada", desc: "5 meses · Presencial con prácticas en laboratorio." },
+                ].map((item, i) => (
+                  <div key={i} className="bg-card rounded-xl p-6 border border-border">
+                    <h4 className="font-bold text-foreground mb-2">{item.title}</h4>
+                    <p className="text-muted-foreground text-sm">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <h3 className="text-2xl font-bold text-foreground mb-2">Características</h3>
+            <p className="text-muted-foreground mb-4">Formación integral diseñada para el éxito profesional.</p>
+            <CardsGrid items={caracteristicasProgramas} />
+
+            <div className="mt-12 text-center">
+              <Link to="/contacto">
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-4 h-auto font-medium text-lg">
+                  Solicitar Información del Programa
+                  <ArrowUpRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════ ESPECIALIZACIONES ═══════ */}
+        <section id="especializaciones" className="scroll-mt-24 py-16 md:py-24 bg-secondary/50">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start mb-12">
+              <div>
+                <span className="text-accent font-semibold uppercase tracking-widest text-sm">03</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 leading-tight">
+                  Especializaciones
+                </h2>
+              </div>
+              <div>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Formación avanzada para profesionales que buscan profundizar su expertise. Con un enfoque intensivo y práctico, te preparamos para liderar y transformar tu área de trabajo.
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden mb-12">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=500&fit=crop" alt="Especialización profesional" className="w-full h-[350px] md:h-[450px] object-cover" />
+            </div>
+
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-foreground mb-6">Especializaciones Disponibles</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                {[
+                  { title: "Auditoría ISO 17025", desc: "8 meses · Híbrido con auditorías supervisadas en laboratorios reales." },
+                  { title: "Metrología Avanzada y Trazabilidad", desc: "10 meses · Presencial con prácticas en laboratorios acreditados." },
+                  { title: "Gestión de Calidad para Laboratorios Clínicos", desc: "12 meses · Híbrido con rotaciones en laboratorios clínicos." },
+                ].map((item, i) => (
+                  <div key={i} className="bg-card rounded-xl p-6 border border-border">
+                    <h4 className="font-bold text-foreground mb-2">{item.title}</h4>
+                    <p className="text-muted-foreground text-sm">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <h3 className="text-2xl font-bold text-foreground mb-2">Beneficios</h3>
+            <p className="text-muted-foreground mb-4">Formación de élite para profesionales excepcionales.</p>
+            <CardsGrid items={beneficiosEspecializaciones} />
+
+            <div className="mt-12 text-center">
+              <Link to="/contacto">
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-4 h-auto font-medium text-lg">
+                  Solicitar Especialización
+                  <ArrowUpRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Final */}
+        <section className="relative bg-gradient-to-br from-[hsl(var(--primary-dark))] via-[hsl(var(--primary))] to-[hsl(var(--primary-dark))] py-16 md:py-24">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
@@ -192,7 +308,7 @@ const Capacitaciones = () => {
                 </h2>
                 <div className="flex flex-wrap gap-4">
                   <Link to="/contacto">
-                    <Button className="bg-[#7cb93e] hover:bg-[#6aa832] text-white rounded-full px-6 py-3 h-auto font-medium">
+                    <Button className="bg-accent hover:bg-accent/90 text-white rounded-full px-6 py-3 h-auto font-medium">
                       Contáctanos
                       <div className="ml-2 w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
                         <ArrowUpRight className="w-4 h-4" />
@@ -200,9 +316,9 @@ const Capacitaciones = () => {
                     </Button>
                   </Link>
                   <Link to="/nosotros">
-                    <Button variant="outline" className="bg-white hover:bg-gray-100 text-[#0a1628] rounded-full px-6 py-3 h-auto font-medium border-0">
+                    <Button variant="outline" className="bg-white hover:bg-gray-100 text-foreground rounded-full px-6 py-3 h-auto font-medium border-0">
                       Nosotros
-                      <div className="ml-2 w-6 h-6 bg-[#7cb93e] rounded-full flex items-center justify-center">
+                      <div className="ml-2 w-6 h-6 bg-accent rounded-full flex items-center justify-center">
                         <ArrowUpRight className="w-4 h-4 text-white" />
                       </div>
                     </Button>
@@ -219,152 +335,8 @@ const Capacitaciones = () => {
             </div>
           </div>
         </section>
-
-        {/* Nuestra Experiencia Section */}
-        <section className="py-16 md:py-24 bg-[#e8eef5]">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="flex justify-center">
-                <img
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=500&h=400&fit=crop"
-                  alt="Sesión de capacitación"
-                  className="rounded-lg max-w-full"
-                />
-              </div>
-              <div>
-                <p className="text-[#7cb93e] font-medium mb-2 uppercase tracking-wider">Nuestra Experiencia</p>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0a1628] mb-6">
-                  Más de 500 profesionales capacitados en gestión de calidad
-                </h2>
-                <p className="text-gray-600 mb-8">
-                  Nuestros programas de capacitación han formado a profesionales de diversas industrias, contribuyendo al fortalecimiento de sus sistemas de gestión y al desarrollo de competencias técnicas especializadas.
-                </p>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#0a1628] rounded-full flex items-center justify-center">
-                      <ChevronRight className="w-5 h-5 text-white" />
-                    </div>
-                    <span className="text-gray-700">Instructores con certificaciones internacionales</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#0a1628] rounded-full flex items-center justify-center">
-                      <ChevronRight className="w-5 h-5 text-white" />
-                    </div>
-                    <span className="text-gray-700">Metodología práctica y participativa</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#0a1628] rounded-full flex items-center justify-center">
-                      <ChevronRight className="w-5 h-5 text-white" />
-                    </div>
-                    <span className="text-gray-700">Material didáctico actualizado y de calidad</span>
-                  </li>
-                </ul>
-                <Link to="/nosotros">
-                  <Button className="bg-[#0a1628] hover:bg-[#0d2847] text-white rounded-full px-6 py-3 h-auto font-medium">
-                    Sobre Nosotros
-                    <div className="ml-2 w-6 h-6 bg-[#7cb93e] rounded-full flex items-center justify-center">
-                      <ArrowUpRight className="w-4 h-4" />
-                    </div>
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="relative bg-gradient-to-br from-[#0a1628] via-[#0d2847] to-[#0a1628] py-16 md:py-24 overflow-hidden">
-          {/* Decorative waves */}
-          <div className="absolute inset-0 opacity-20">
-            <svg className="absolute top-0 right-0 w-full h-full" viewBox="0 0 1000 600" preserveAspectRatio="none">
-              <path d="M0,100 Q250,50 500,100 T1000,100 L1000,0 L0,0 Z" fill="url(#gradient1)" />
-              <defs>
-                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#7cb93e" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="#0d2847" stopOpacity="0.1" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <p className="text-[#7cb93e] font-medium mb-2 uppercase tracking-wider">Información</p>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-8">
-                  Preguntas frecuentes sobre capacitaciones
-                </h2>
-                <Accordion type="single" collapsible className="space-y-4">
-                  {faqs.map((faq, index) => (
-                    <AccordionItem
-                      key={index}
-                      value={`item-${index}`}
-                      className="bg-white rounded-xl px-6 border-0"
-                    >
-                      <AccordionTrigger className="text-[#0a1628] hover:no-underline py-4 text-left">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-gray-600 pb-4">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </div>
-
-              <div className="flex items-start justify-center">
-                <div className="bg-white rounded-2xl p-8 w-full max-w-md shadow-xl">
-                  <h3 className="text-2xl font-bold text-[#0a1628] text-center mb-2">
-                    Solicita información
-                  </h3>
-                  <p className="text-gray-500 text-center mb-6">
-                    Te enviamos el catálogo completo de cursos disponibles.
-                  </p>
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <Input
-                      placeholder="Tu Nombre:"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="rounded-lg border-gray-200 py-3 px-4"
-                      required
-                    />
-                    <Input
-                      type="email"
-                      placeholder="Tu Email:"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="rounded-lg border-gray-200 py-3 px-4"
-                      required
-                    />
-                    <Input
-                      placeholder="Teléfono:"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="rounded-lg border-gray-200 py-3 px-4"
-                    />
-                    <Textarea
-                      placeholder="Mensaje:"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="rounded-lg border-gray-200 py-3 px-4 min-h-[100px]"
-                      rows={4}
-                    />
-                    <Button
-                      type="submit"
-                      className="w-auto bg-[#0a1628] hover:bg-[#0d2847] text-white rounded-full px-6 py-3 h-auto font-medium"
-                    >
-                      Enviar
-                      <div className="ml-2 w-6 h-6 bg-[#7cb93e] rounded-full flex items-center justify-center">
-                        <ArrowUpRight className="w-4 h-4" />
-                      </div>
-                    </Button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
+
       <Footer />
       <WhatsAppButton />
     </div>

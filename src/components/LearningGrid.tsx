@@ -7,21 +7,21 @@ const learningItems = [
     title: "Cursos",
     description: "Cursos especializados en normativas de calidad, metrología y técnicas de laboratorio. Modalidad presencial y virtual.",
     hoverClass: "learning-card-cursos",
-    href: "/aprendizaje/cursos",
+    href: "/capacitaciones#cursos",
   },
   {
     icon: Layers,
     title: "Programas",
     description: "Programas integrales de formación continua diseñados para el desarrollo profesional en gestión de calidad.",
     hoverClass: "learning-card-programas",
-    href: "/aprendizaje/programas",
+    href: "/capacitaciones#programas",
   },
   {
     icon: Award,
     title: "Especializaciones",
     description: "Especializaciones avanzadas para profesionales que buscan profundizar en áreas específicas de acreditación.",
     hoverClass: "learning-card-especializaciones",
-    href: "/aprendizaje/especializaciones",
+    href: "/capacitaciones#especializaciones",
   },
 ];
 
