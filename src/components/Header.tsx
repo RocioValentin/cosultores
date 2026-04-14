@@ -21,10 +21,9 @@ const navItems: NavItem[] = [
     label: "Servicios",
     href: "/servicios",
     dropdown: [
-      { label: "Consultorías", href: "/servicios/consultorias" },
-      // { label: "Capacitaciones", href: "/servicios/capacitaciones" },
-      { label: "Implementaciones", href: "/servicios/implementaciones" },
-      { label: "Auditorías", href: "/servicios/auditoria" },
+      { label: "Consultorías", href: "/servicios#consultorias" },
+      { label: "Implementaciones", href: "/servicios#implementaciones" },
+      { label: "Auditorías", href: "/servicios#auditoria" },
     ],
   },
   {
@@ -45,7 +44,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpenDropdown, setMobileOpenDropdown] = useState<string | null>(null);
-  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleMouseEnter = (label: string) => {
     if (dropdownTimeoutRef.current) {

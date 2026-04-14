@@ -1,4 +1,5 @@
 import { Users, GraduationCap, ClipboardCheck, Search } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -6,24 +7,28 @@ const services = [
     title: "Consultorías",
     description: "Acompañamos a tu laboratorio en la implementación o mejora de sistemas basados en ISO 17025. Asesoramiento técnico completo.",
     hoverClass: "service-card-consultoria",
+    href: "/servicios#consultorias",
   },
   {
     icon: GraduationCap,
     title: "Capacitaciones",
     description: "Programas personalizados para fortalecer las competencias del personal técnico. Modalidad in-house y virtual.",
     hoverClass: "service-card-capacitacion",
+    href: "/capacitaciones",
   },
   {
     icon: ClipboardCheck,
     title: "Implementaciones",
     description: "Implementamos sistemas de gestión ISO 17025, trazabilidad y procedimientos de aseguramiento de calidad.",
     hoverClass: "service-card-implementacion",
+    href: "/servicios#implementaciones",
   },
   {
     icon: Search,
     title: "Auditorías",
     description: "Realizamos auditorías internas que identifican brechas, no conformidades y oportunidades de mejora.",
     hoverClass: "service-card-auditoria",
+    href: "/servicios#auditoria",
   },
 ];
 
@@ -33,7 +38,8 @@ const ServicesGrid = () => {
       <div className="container-section">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
           {services.map((service, index) => (
-            <div
+            <Link
+              to={service.href}
               key={service.title}
               className={`service-card ${service.hoverClass} group animate-fade-in cursor-pointer`}
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -52,12 +58,12 @@ const ServicesGrid = () => {
                 <p className="mb-5 leading-relaxed text-muted-foreground group-hover:text-white/90 transition-colors duration-300">
                   {service.description}
                 </p>
-                <button className="uppercase text-sm tracking-wide font-semibold text-accent group-hover:text-white flex items-center gap-1 transition-colors duration-300">
+                <span className="uppercase text-sm tracking-wide font-semibold text-accent group-hover:text-white flex items-center gap-1 transition-colors duration-300">
                   Ver más
                   <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-                </button>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

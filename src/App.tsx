@@ -7,10 +7,7 @@ import Index from "./pages/Index";
 import Servicios from "./pages/Servicios";
 import Contacto from "./pages/Contacto";
 import Nosotros from "./pages/Nosotros";
-import Consultorias from "./pages/Consultorias";
-import Capacitaciones from "./pages/Capacitaciones";
-import Implementaciones from "./pages/Implementaciones";
-import Auditoria from "./pages/Auditoria";
+// Legacy service sub-pages removed — unified into /servicios
 import Aprendizaje from "./pages/Aprendizaje";
 import Cursos from "./pages/Cursos";
 import Programas from "./pages/Programas";
@@ -28,10 +25,6 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/servicios" element={<Servicios />} />
-          <Route path="/servicios/consultorias" element={<Consultorias />} />
-          {/* <Route path="/servicios/capacitaciones" element={<Capacitaciones />} /> */}
-          <Route path="/servicios/implementaciones" element={<Implementaciones />} />
-          <Route path="/servicios/auditoria" element={<Auditoria />} />
           <Route path="/Capacitaciones" element={<Aprendizaje />} />
           <Route path="/Capacitaciones/cursos" element={<Cursos />} />
           <Route path="/Capacitaciones/programas" element={<Programas />} />
