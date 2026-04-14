@@ -7,10 +7,7 @@ import Index from "./pages/Index";
 import Servicios from "./pages/Servicios";
 import Contacto from "./pages/Contacto";
 import Nosotros from "./pages/Nosotros";
-import Consultorias from "./pages/Consultorias";
-import Capacitaciones from "./pages/Capacitaciones";
-import Implementaciones from "./pages/Implementaciones";
-import Auditoria from "./pages/Auditoria";
+// Legacy service sub-pages removed — unified into /servicios
 import Aprendizaje from "./pages/Aprendizaje";
 import Cursos from "./pages/Cursos";
 import Programas from "./pages/Programas";

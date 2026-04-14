@@ -44,7 +44,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpenDropdown, setMobileOpenDropdown] = useState<string | null>(null);
-  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleMouseEnter = (label: string) => {
     if (dropdownTimeoutRef.current) {
