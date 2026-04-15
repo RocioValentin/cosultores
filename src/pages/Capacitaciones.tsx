@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import CursosCatalogo from "@/components/capacitaciones/CursosCatalogo";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Link, useLocation } from "react-router-dom";
