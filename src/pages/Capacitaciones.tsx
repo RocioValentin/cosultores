@@ -145,49 +145,12 @@ const Capacitaciones = () => {
               </div>
               <div>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Capacitación técnica práctica orientada a la mejora continua. Nuestros cursos están diseñados para proporcionar conocimientos sólidos y habilidades prácticas aplicables inmediatamente en tu entorno laboral.
+                  Capacitación técnica práctica orientada a la mejora continua. Explora nuestro catálogo de cursos y filtra por estado, modalidad o categoría.
                 </p>
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden mb-12">
-              <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&h=500&fit=crop" alt="Curso en aula" className="w-full h-[350px] md:h-[450px] object-cover" />
-            </div>
-
-            {/* Áreas */}
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold text-foreground mb-6">Áreas de Formación</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                {[
-                  "Gestión de Calidad en Laboratorios (ISO 17025)",
-                  "Metrología y Calibración",
-                  "Aseguramiento de la Calidad Analítica",
-                  "Auditorías Internas y Gestión de No Conformidades"
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 bg-card rounded-lg p-4 border border-border">
-                    <div className="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
-                      <CheckCircle2 className="w-5 h-5 text-accent" />
-                    </div>
-                    <span className="text-foreground">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Modalidades */}
-            <h3 className="text-2xl font-bold text-foreground mb-2">Modalidades de Formación</h3>
-            <p className="text-muted-foreground mb-4">Flexibilidad para adaptarnos a tus necesidades.</p>
-            <CardsGrid items={modalidadesCursos} />
-
-            {/* CTA */}
-            <div className="mt-12 text-center">
-              <Link to="/contacto">
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-4 h-auto font-medium text-lg">
-                  Inscríbete a un Curso
-                  <ArrowUpRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-            </div>
+            <CursosCatalogo />
           </div>
         </section>
 
