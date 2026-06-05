@@ -1,6 +1,7 @@
-import { Facebook, Twitter, Linkedin, Phone, Mail, MapPin, ChevronRight, Music2 } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Phone, Mail, MapPin, ChevronRight, Music2, Camera } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logoblanco.jpg";
+import WhatsappIcon from "../assets/images/whatsapp.png";
 
 const Footer = () => {
   return (
@@ -24,16 +25,19 @@ const Footer = () => {
             
             {/* Social Icons */}
             <div className="flex items-center gap-3">
-              <a href="#" className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all">
+              <a href="http://bit.ly/3G6oBRQ" className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all">
-                <Twitter size={18} />
+              <a href="https://bit.ly/4l1TJRJ" className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all">
+                <Camera size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all">
+              {/* <a href="#" className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all">
+                <Twitter size={18} />
+              </a> */}
+              <a href="https://bit.ly/3ZHrv6g" className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all">
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all">
+              <a href="https://bit.ly/4ne4tOu" className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all">
                 <Music2 size={18} />
               </a>
             </div>
@@ -90,18 +94,72 @@ const Footer = () => {
                 Av. Buenos Aires N° 115 – Puente Piedra. Lima, Perú.
               </li>
               <li>
-                <a href="tel:+51906993769" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-3">
-                  <Phone size={18} className="text-accent" />
-                  +51 972 103 384
-                </a>
-                <a href="tel:+51906993769" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-3">
+                {/* <a href="tel:+51906993769" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-3">
                   <Phone size={18} className="text-accent" />
                   +51 906 993 769
                 </a>
-                <a href="tel:+51906993769" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-3">
+                <a href="tel:+51919 715 800" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-3">
                   <Phone size={18} className="text-accent" />
-                  +51 956 341 568
+                  +51 919 715 800
                 </a>
+                <a href="tel:+51 972 103 384" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-3">
+                  <Phone size={18} className="text-accent" />
+                  +51 972 103 384
+                </a> */}
+                <a
+  href="https://wa.me/51906993769"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-3"
+>
+  <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+    <img
+      src={WhatsappIcon}
+      alt="WhatsApp Icon"
+      className="w-6 h-6"
+    />
+  </div>
+
+  <span className="font-medium">
+    +51 906 993 769
+  </span>
+</a>
+<a
+  href="https://wa.me/51919715800"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-3"
+>
+  <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+    <img
+      src={WhatsappIcon}
+      alt="WhatsApp Icon"
+      className="w-6 h-6"
+    />
+  </div>
+
+  <span className="font-medium">
+    +51 919 715 800
+  </span>
+</a>
+<a
+  href="https://wa.me/51972103384"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-3"
+>
+  <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+    <img
+      src={WhatsappIcon}
+      alt="WhatsApp Icon"
+      className="w-6 h-6"
+    />
+  </div>
+
+  <span className="font-medium">
+    +51 972 103 384
+  </span>
+</a>
               </li>
             </ul>
           </div>

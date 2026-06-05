@@ -16,15 +16,21 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    quote: "Excelente servicio de consultoría. El equipo de CORMA nos guió paso a paso en todo el proceso de acreditación ISO 17025. Altamente recomendados.",
-    name: "Dr. María García",
-    role: "Directora de Laboratorio – LABTEST PERU",
+    quote: "El Programa Especializado de Metrología me pareció genial, aprendí los detalles importantes sobre la metrología, considero que los docentes saben mucho sobre calibraciones en la-boratorios. En la actualidad estoy en la búsqueda de asesoría para acreditar nuestro laboratorio y profundizar más en cursos de Metrología. CORMA es una muy buena opción.",
+    name: "Carlos Antonio Castro",
+    role: "Técnico Metrólogo – CELDA E.I.R.L.",
   },
   {
     id: 3,
+    quote: "Me inscribí en el curso de Calibración de Pesas y Equipos de Medición, organizado por CORMA CONSULTORES, y puedo decir que ha sido súper enriquecedor todo lo que he aprendido en el curso, tanto en la parte teórica como en la práctica que tan bien nos lo demostró el expositor. He quedado muy satisfecha con lo aprendido, lo cual podré aplicar en mi centro de labores.",
+    name: "Luz Apoloni Díaz",
+    role: "Jefe de Validaciones de Laboratorios - Lansier S.A.C.",
+  },
+  {
+    id: 4,
     quote: "Las capacitaciones impartidas por CORMA fueron de alto nivel profesional. Nuestro equipo técnico ahora está mucho más preparado para enfrentar auditorías.",
     name: "Ing. Carlos Mendoza",
-    role: "Gerente de Calidad – METROLOGÍA SA",
+    role: "Gerente de Calidad – METROLOGÍA S.A.",
   },
 ];
 

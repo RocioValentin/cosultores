@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "¿Qué tipos de laboratorios pueden beneficiarse?",
-    answer: "Trabajamos con laboratorios de ensayo, calibración y clínicos de diversos sectores como farmacéutico, alimentario, energético y médico.",
+    answer: "Acompañamos a laboratorios de ensayo y calibración de los sectores farmacéutico, alimentario, ambiental, ocupacional, energético e industrial, ofreciendo equipos, reactivos y servicios especializados que garantizan precisión, confiabilidad y cumplimiento de los más altos estándares de calidad.",
   },
   {
     question: "¿Cómo puedo solicitar una cotización?",
@@ -118,7 +118,7 @@ const HomeFAQSection = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <input
                   type="text"
-                  placeholder="Your Name:"
+                  placeholder="Tu Nombre:"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
@@ -126,7 +126,7 @@ const HomeFAQSection = () => {
                 />
                 <input
                   type="email"
-                  placeholder="Your Email:"
+                  placeholder="Tu Email:"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
@@ -134,13 +134,13 @@ const HomeFAQSection = () => {
                 />
                 <input
                   type="tel"
-                  placeholder="Phone:"
+                  placeholder="Tu Teléfono:"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
                 />
                 <textarea
-                  placeholder="Message:"
+                  placeholder="Tu Mensaje:"
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -151,7 +151,7 @@ const HomeFAQSection = () => {
                   type="submit"
                   className="w-full bg-primary text-primary-foreground py-4 rounded-full font-semibold hover:bg-primary/90 transition-all flex items-center justify-center gap-2"
                 >
-                  Submit Now
+                  Enviar Ahora
                   <span className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-foreground">
                       <path d="M7 17L17 7M17 7H7M17 7V17" />

@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
-import { Facebook, Twitter, Youtube, Linkedin, Music2Icon} from "lucide-react";
+import { Facebook, Twitter, Youtube, Linkedin, Music2Icon, Camera} from "lucide-react";
 import { Link } from "react-router-dom";
 import slideImage1 from "../../assets/images/carrusel1.jpg";
-import slideImage2 from "../../assets/images/carrusel2.png";
-import slideImage3 from "../../assets/images/carrusel3.jpg";
+import slideImage2 from "../../assets/images/cormapesas.jpeg";
+import slideimage3 from "../../assets/images/slideimage3_1.jpeg";
 import logo from "../../assets/images/logoblanco.jpg";
 
 interface HeroSlide {
@@ -28,7 +28,7 @@ const slides: HeroSlide[] = [
     image: slideImage1,
     floatingImage:logo,
     highlight: "Auditoría",
-    titleEnd: "especializada para laboratorios ISO/IEC 17025 y Sistemas integrados de gestión.",
+    titleEnd: "especializada para laboratorios ISO/IEC 17025 y Sistemas Integrados de Gestión.",
     description: "Acompañamos a laboratorios de ensayo y calibración en su proceso de acreditación y mejora continua ante INACAL.",
     buttonText: "Ver Servicios",
     buttonLink: "/servicios",
@@ -40,7 +40,7 @@ const slides: HeroSlide[] = [
     image: slideImage2,
     floatingImage:logo,
     highlight: "especializadas",
-    titleEnd: "para la mejora continua de laboratorios ISO/IEC 17025 y Sistemas integrados de gestión.",
+    titleEnd: "para la mejora continua de laboratorios ISO/IEC 17025 y Sistemas Integrados de Gestión.",
     description: "Acompañamos a laboratorios de ensayo y calibración en su proceso de acreditación y mejora continua ante INACAL.",
     buttonText: "Ver Servicios",
     buttonLink: "/servicios",
@@ -48,11 +48,11 @@ const slides: HeroSlide[] = [
   {
     id: 3,
     subtitle: "EXPERTOS EN CALIDAD",
-    title: "Cursos en vivo,",
-    image: slideImage3,
+    title: "Cursos virtuales,",
+    image: slideimage3,
     floatingImage:logo,
-    highlight: "presenciales",
-    titleEnd: " y asíncronos alineados a la ISO/IEC 17025 y Sistemas integrados de gestión.",
+    highlight: "y presenciales",
+    titleEnd: " alineados a la ISO/IEC 17025 y Sistemas Integrados de Gestión.",
     description: "Acompañamos a tu laboratorio de ensayo y calibración en su proceso de acreditación y mejora continua ante INACAL.",
     buttonText: "Ver Servicios",
     buttonLink: "/servicios",
@@ -108,19 +108,22 @@ const HeroCarousel = () => {
 
             {/* Social Icons */}
             <div className="flex items-center gap-4 mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              <a href="http://bit.ly/3G6oBRQ" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-                <Twitter size={18} />
+              <a href="https://bit.ly/4l1TJRJ" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <Camera size={18} />
               </a>
-              <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              {/* <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <Twitter size={18} />
+              </a> */}
+              <a href="https://bit.ly/3PHLEr9" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                 <Youtube size={18} />
               </a>
-              <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              <a href="https://bit.ly/3ZHrv6g" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              <a href="https://bit.ly/4ne4tOu" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                 <Music2Icon size={18} />
               </a>
             </div>
@@ -144,14 +147,14 @@ const HeroCarousel = () => {
               src={slide.image}
               alt={slide.title}
               className="
-                w-[450px]
+                w-[1000px]
                 rounded-2xl
                 shadow-[0_25px_60px_rgba(0,0,0,0.25)]
                 animate-riseOnce
               "
             />
             {/* Imagen flotante en esquina */}
-            <img
+            {/* <img
               src={slide.floatingImage}
               alt="Floating element"
               className="
@@ -163,7 +166,7 @@ const HeroCarousel = () => {
                 shadow-xl
                 animate-float
               "
-            />
+            /> */}
           </div>
         </div>
       </div>

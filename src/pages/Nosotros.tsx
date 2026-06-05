@@ -356,7 +356,7 @@ const Nosotros = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <input
                   type="text"
-                  placeholder="Your Name:"
+                  placeholder="Tu Nombre:"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 bg-background"
@@ -364,7 +364,7 @@ const Nosotros = () => {
                 />
                 <input
                   type="email"
-                  placeholder="Your Email:"
+                  placeholder="Tu Email:"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 bg-background"
@@ -372,13 +372,13 @@ const Nosotros = () => {
                 />
                 <input
                   type="tel"
-                  placeholder="Phone:"
+                  placeholder="Tu Teléfono:"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 bg-background"
                 />
                 <textarea
-                  placeholder="Message:"
+                  placeholder="Tu Mensaje:"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={4}
@@ -388,7 +388,7 @@ const Nosotros = () => {
                   type="submit"
                   className="w-full bg-accent text-accent-foreground px-6 py-4 rounded-full font-semibold hover:bg-accent/90 transition-colors flex items-center justify-center gap-2"
                 >
-                  Submit Now
+                  Enviar Ahora
                   <ArrowUpRight size={20} />
                 </button>
               </form>

@@ -186,14 +186,14 @@ const CursosCatalogo = () => {
                   </h4>
                   <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{curso.descripcion}</p>
                   <div className="grid grid-cols-2 gap-3 mb-5">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    {/* <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Calendar className="w-4 h-4 text-primary/70 flex-shrink-0" />
                       <span>{formatDate(curso.fecha_inicio)}</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Clock className="w-4 h-4 text-primary/70 flex-shrink-0" />
                       <span>{curso.duracion}</span>
-                    </div>
+                    </div> */}
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Monitor className="w-4 h-4 text-primary/70 flex-shrink-0" />
                       <span>{curso.modalidad}</span>

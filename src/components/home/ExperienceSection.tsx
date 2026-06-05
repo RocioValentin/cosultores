@@ -1,6 +1,6 @@
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logoblanco.jpg";
+import imagemetro from "../../assets/images/carrusel2.png";
 
 const features = [
   "Especialistas en laboratorios de ensayo y calibracióna",
@@ -18,7 +18,7 @@ const ExperienceSection = () => {
           <div className="relative">
             <div className="aspect-[4/4] bg-background rounded-2xl overflow-hidden shadow-soft max-w-md mx-auto">
               <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                <img src={logo} alt="CORMA Logo" className="w-full h-full object-contain" />
+                <img src={imagemetro} alt="CORMA metro" className="w-full h-full object-contain" />
                 {/* <span className="text-muted-foreground">Imagen de experiencia</span> */}
               </div>
             </div>
@@ -30,10 +30,10 @@ const ExperienceSection = () => {
               ¿POR QUÉ CORMA?
             </span>
             <h2 className="text-3xl lg:text-5xl font-heading font-bold text-foreground mb-6 leading-tight">
-              Brindamos servicios y productos a laboratorios de ensayo, calibración y clínico
+              Brindamos servicios y productos a laboratorios de ensayo y calibración.
             </h2>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Somos líderes en consultoría y equipamiento para laboratorios, con un equipo experto en áreas como ensayo, calibración y clínica, asegurando soluciones adaptadas a cada cliente en sectores diversos.
+              Impulsamos el desarrollo de laboratorios mediante servicios de consultoría, capacitación y equipamiento especializado, proporcionando soluciones confiables y adaptadas a los requerimientos de cada cliente y sector.
             </p>
 
             {/* Feature List */}

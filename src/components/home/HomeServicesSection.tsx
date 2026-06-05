@@ -1,4 +1,4 @@
-import { Users, GraduationCap, ClipboardCheck, Search, FlaskConical, ArrowUpRight } from "lucide-react";
+import { Users, GraduationCap, ClipboardCheck, Search, FlaskConical, ArrowUpRight, Settings } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
@@ -9,12 +9,12 @@ const services = [
   },
   {
     icon: GraduationCap,
-    title: "Capacitaciones técnicas",
+    title: "Capacitaciones Especializadas",
     description: "Capacitación in-house personalizada y práctica para su equipo en su lugar de trabajo.",
   },
   {
     icon: ClipboardCheck,
-    title: "Sistemas de gestión (ISO 9001 - 14001 - 45001)",
+    title: "Sistemas de Gestión (ISO 9001 - 14001 - 45001)",
     description: "Ayudamos a implementar y mantener la Norma ISO 17025 en su laboratorio para asegurar sus resultados.",
   },
   {
@@ -24,8 +24,13 @@ const services = [
   },
   {
     icon: FlaskConical,
-    title: "Equipos y Reactivos",
-    description: "Suministro de equipos y reactivos de alta calidad para laboratorios de ensayo y calibración.",
+    title: "Venta de Reactivos y Materiales",
+    description: "Suministro de reactivos y materiales de alta calidad para laboratorios de ensayo y calibración.",
+  },
+  {
+    icon: Settings,
+    title: "Fabricación, Venta y Mantenimiento de Equipos",
+    description: "Comercialización y soporte técnico de equipos de laboratorio con altos estándares de calidad y desempeño",
   },
 ];
 

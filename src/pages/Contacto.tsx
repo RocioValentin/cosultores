@@ -117,7 +117,7 @@ const Contacto = () => {
                     <input
                       type="text"
                       name="name"
-                      placeholder="Your Name:"
+                      placeholder="Tu Nombre:"
                       value={formData.name}
                       onChange={handleChange}
                       required
@@ -128,7 +128,7 @@ const Contacto = () => {
                     <input
                       type="email"
                       name="email"
-                      placeholder="Your Email:"
+                      placeholder="Tu Email:"
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -139,7 +139,7 @@ const Contacto = () => {
                     <input
                       type="tel"
                       name="phone"
-                      placeholder="Phone:"
+                      placeholder="Tu Teléfono:"
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-4 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
@@ -148,7 +148,7 @@ const Contacto = () => {
                   <div>
                     <textarea
                       name="message"
-                      placeholder="Message:"
+                      placeholder="Tu Mensaje:"
                       value={formData.message}
                       onChange={handleChange}
                       required
@@ -160,7 +160,7 @@ const Contacto = () => {
                     type="submit"
                     className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-accent-foreground font-semibold px-8 py-4 rounded-xl transition-all duration-300 group"
                   >
-                    Submit Now
+                    Enviar Ahora
                     <span className="w-8 h-8 rounded-full bg-accent-dark/30 flex items-center justify-center group-hover:bg-accent/30 transition-colors">
                       <ArrowUpRight size={18} />
                     </span>

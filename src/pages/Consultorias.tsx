@@ -240,10 +240,10 @@ const Consultorias = () => {
               <div>
                 <p className="text-[#7cb93e] font-medium mb-2 uppercase tracking-wider">Nuestra Experiencia</p>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0a1628] mb-6">
-                  Brindamos servicios y productos a laboratorios de ensayo, calibración y clínico
+                  Brindamos servicios y productos a laboratorios de ensayo y calibración.
                 </h2>
                 <p className="text-gray-600 mb-8">
-                  Somos líderes en consultoría y equipamiento para laboratorios, con un equipo experto en áreas como ensayo, calibración y clínica, asegurando soluciones adaptadas a cada cliente en sectores diversos.
+                  Impulsamos el desarrollo de laboratorios mediante servicios de consultoría, capacitación y equipamiento especializado, proporcionando soluciones confiables y adaptadas a los requerimientos de cada cliente y sector.
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-center gap-3">
@@ -328,7 +328,7 @@ const Consultorias = () => {
                   </p>
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <Input
-                      placeholder="Your Name:"
+                      placeholder="Tu Nombre:"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="rounded-lg border-gray-200 py-3 px-4"
@@ -336,20 +336,20 @@ const Consultorias = () => {
                     />
                     <Input
                       type="email"
-                      placeholder="Your Email:"
+                      placeholder="Tu Email:"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="rounded-lg border-gray-200 py-3 px-4"
                       required
                     />
                     <Input
-                      placeholder="Phone:"
+                      placeholder="Tu Teléfono:"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="rounded-lg border-gray-200 py-3 px-4"
                     />
                     <Textarea
-                      placeholder="Message:"
+                      placeholder="Tu Mensaje:"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="rounded-lg border-gray-200 py-3 px-4 min-h-[100px]"
@@ -359,7 +359,7 @@ const Consultorias = () => {
                       type="submit"
                       className="w-auto bg-[#0a1628] hover:bg-[#0d2847] text-white rounded-full px-6 py-3 h-auto font-medium"
                     >
-                      Submit Now
+                      Enviar Ahora
                       <div className="ml-2 w-6 h-6 bg-[#7cb93e] rounded-full flex items-center justify-center">
                         <ArrowUpRight className="w-4 h-4" />
                       </div>

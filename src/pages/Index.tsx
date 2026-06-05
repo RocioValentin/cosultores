@@ -13,20 +13,28 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="hero-gradient">
-        <Header />
-        <HeroCarousel />
+      {/* Header fijo */}
+      <Header />
+
+      {/* Espacio para compensar la altura del header */}
+      <div className="pt-15">
+        <div className="hero-gradient">
+          <HeroCarousel />
+        </div>
+
+        <main>
+          <ExperienceSection />
+          <HomeServicesSection />
+          <HomeTestimonialsSection />
+          <HomeFAQSection />
+          {/* <CoursesSection />
+          <ProductsSection />
+          <OnlineCoursesCarousel /> */}
+        </main>
+
+        <Footer />
       </div>
-      <main>
-        <ExperienceSection />
-        <HomeServicesSection />
-        <HomeTestimonialsSection />
-        <HomeFAQSection />
-        {/* <CoursesSection />
-        <ProductsSection />
-        <OnlineCoursesCarousel /> */}
-      </main>
-      <Footer />
+
       <WhatsAppButton />
     </div>
   );

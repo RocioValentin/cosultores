@@ -1,7 +1,7 @@
 import { Phone, MessageCircle, Menu, X, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/images/logo.png";
+import logocentro from "../assets/images/logocentro.jpeg";
 import WhatsappIcon from "../assets/images/whatsapp.png";
 
 interface DropdownItem {
@@ -16,9 +16,9 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "Inicio", href: "/" },
+  { label: "INICIO", href: "/" },
   {
-    label: "Servicios",
+    label: "SERVICIOS",
     href: "/servicios",
     dropdown: [
       { label: "Consultorías", href: "/servicios#consultorias" },
@@ -27,7 +27,7 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    label: "Capacitaciones",
+    label: "CAPACITACIONES",
     href: "/capacitaciones",
     dropdown: [
       { label: "Cursos", href: "/capacitaciones#cursos" },
@@ -36,8 +36,8 @@ const navItems: NavItem[] = [
     ],
   },
   // { label: "Tienda", href: "/servicios" },
-  { label: "Nosotros", href: "/nosotros" },
-  { label: "Contacto", href: "/contacto" },
+  { label: "NOSOTROS", href: "/nosotros" },
+  { label: "CONTACTO", href: "/contacto" },
 ];
 
 const Header = () => {
@@ -76,13 +76,14 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="bg-transparent py-4 relative z-50">
+    // <header className="bg-transparent py-4 relative z-50">
+    <header className="sticky top-0 bg-white shadow-sm z-50">
       <div className="container-section">
         <div className="flex items-center justify-between">
           {/* Logo - Supports image */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-20 h-20 rounded-xl bg-background flex items-center justify-center ml-5 shadow-md overflow-hidden">
-              <img src={logo} alt="CORMA Logo" className="w-full h-full object-contain" />
+            <div className="w-40 h-20 bg-background flex items-center justify-center ml-1 overflow-hidden">
+              <img src={logocentro} alt="CORMA Logo" className="w-full h-full " />
               {/* <span className="text-primary font-heading font-bold text-xl">C</span> */}
             </div>
             {/* <div className="text-primary-foreground">
@@ -103,9 +104,9 @@ const Header = () => {
                 {item.dropdown ? (
                   <button
                     onClick={() => handleClick(item.label)}
-                    className={`flex items-center gap-1 px-4 py-2 rounded-lg text-primary-foreground/90 hover:text-primary-foreground hover:bg-primary-foreground/10 font-medium transition-all duration-200 ${
-                      openDropdown === item.label ? "bg-primary-foreground/10 text-primary-foreground" : ""
-                    }`}
+                    className={`flex items-center gap-1 px-2 py-2 rounded-lg text-lg font-bold text-gray-700 hover:text-primary hover:bg-gray-100 transition-all duration-200 ${
+  openDropdown === item.label ? "bg-gray-100 text-primary" : ""
+}`}
                   >
                     {item.label}
                     <ChevronDown
@@ -116,7 +117,7 @@ const Header = () => {
                 ) : (
                   <Link
                     to={item.href}
-                    className="flex items-center gap-1 px-4 py-2 rounded-lg text-primary-foreground/90 hover:text-primary-foreground hover:bg-primary-foreground/10 font-medium transition-all duration-200"
+                    className="flex items-center gap-1 px-4 py-2 rounded-lg text-lg font-bold text-gray-700 hover:text-primary hover:bg-gray-100 transition-all duration-200"
                   >
                     {item.label}
                   </Link>
@@ -150,7 +151,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href="tel:+51906993769"
-              className="flex items-center gap-2 text-primary-foreground/90 hover:text-primary-foreground transition-colors"
+              className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors"
             >
               <Phone size={18} />
               <span className="font-medium">(+51) 906 993 769</span>
@@ -168,7 +169,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-primary-foreground p-2"
+            className="lg:hidden text-gray-700 p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -184,7 +185,7 @@ const Header = () => {
                 <div key={item.label}>
                   <button
                     onClick={() => (item.dropdown ? toggleMobileDropdown(item.label) : null)}
-                    className="w-full flex items-center justify-between px-4 py-3 text-primary-foreground/90 hover:text-primary-foreground hover:bg-primary-foreground/10 rounded-lg font-medium transition-all duration-200"
+                    className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary/10 rounded-lg font-medium transition-all duration-200"
                   >
                     {!item.dropdown ? (
                       <Link to={item.href} className="w-full text-left">
@@ -210,7 +211,7 @@ const Header = () => {
                         <Link
                           key={dropdownItem.label}
                           to={dropdownItem.href}
-                          className="block py-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors duration-200"
+                          className="block py-2 text-primary/70 hover:text-primary transition-colors duration-200"
                         >
                           {dropdownItem.label}
                         </Link>
@@ -222,7 +223,7 @@ const Header = () => {
               
               <a
                 href="tel:+51906993769"
-                className="flex items-center gap-2 px-4 py-3 text-primary-foreground/90 mt-2"
+                className="flex items-center gap-2 px-4 py-3 text-gray-700 mt-2"
               >
                 <Phone size={18} />
                 <span>(+51) 906 993 769</span>
