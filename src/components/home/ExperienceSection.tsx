@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import imagemetro from "../../assets/images/carrusel2.png";
 
 const features = [
-  "Especialistas en laboratorios de ensayo y calibracióna",
+  "Especialistas en laboratorios de ensayo y calibración",
   "Enfoque práctico y orientado a acreditación",
   "Experiencia en ISO/IEC 17025 y trinorma",
   "Metodología clara y acompañamiento real",

@@ -1,7 +1,7 @@
 import { Phone, MessageCircle, Menu, X, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logocentro from "../assets/images/logocentro.jpeg";
+import cormalogo from "../assets/images/cormainferior.jpeg";
 import WhatsappIcon from "../assets/images/whatsapp.png";
 
 interface DropdownItem {
@@ -82,8 +82,8 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo - Supports image */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-40 h-20 bg-background flex items-center justify-center ml-1 overflow-hidden">
-              <img src={logocentro} alt="CORMA Logo" className="w-full h-full " />
+            <div className="w-40 h-20 flex items-center justify-center ml-1 overflow-hidden">
+              <img src={cormalogo} alt="CORMA Logo" className="w-full h-full object-contain" />
               {/* <span className="text-primary font-heading font-bold text-xl">C</span> */}
             </div>
             {/* <div className="text-primary-foreground">
