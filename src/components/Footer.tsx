@@ -1,6 +1,6 @@
 import { Facebook, Twitter, Linkedin, Phone, Mail, MapPin, ChevronRight, Music2, Camera } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logoblanco.jpg";
+import cormabalanza from "../assets/images/cormabalanza.jpeg";
 import WhatsappIcon from "../assets/images/whatsapp.png";
 
 const Footer = () => {
@@ -15,7 +15,7 @@ const Footer = () => {
                 <span className="text-primary font-heading font-bold text-xl"></span>
               </div> */}
               <div className="w-50 h-50 rounded-xl bg-background flex items-center justify-center shadow-md overflow-hidden">
-              <img src={logo} alt="CORMA Logo" className="w-full h-full object-contain" />
+              <img src={cormabalanza} alt="CORMA Logo" className="w-full h-full object-contain" />
               {/* <span className="text-primary font-heading font-bold text-xl">C</span> */}
             </div>
             </div>

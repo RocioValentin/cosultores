@@ -1,7 +1,7 @@
 import { Phone, MessageCircle, Menu, X, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import cormalogo from "../assets/images/cormainferior.jpeg";
+import cormalogo from "../assets/images/LOGOCORMA-PáginaWeb.png";
 import WhatsappIcon from "../assets/images/whatsapp.png";
 
 interface DropdownItem {
