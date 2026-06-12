@@ -114,12 +114,12 @@ const CertificacionesAdmin = () => {
     setSaving(true);
     try {
       if (editing) {
-        const updates: Record<string, unknown> = { ...form };
+        let newPdfPath: string | null = null;
         if (file) {
-          const newPath = await uploadPdf(editing.verification_code);
-          if (newPath) updates.pdf_url = newPath;
+          newPdfPath = await uploadPdf(editing.verification_code);
           if (editing.pdf_url) await supabase.storage.from("certificates").remove([editing.pdf_url]);
         }
+        const updates = newPdfPath ? { ...form, pdf_url: newPdfPath } : form;
         const { error } = await supabase.from("certifications").update(updates).eq("id", editing.id);
         if (error) throw error;
         toast({ title: "Certificado actualizado" });
