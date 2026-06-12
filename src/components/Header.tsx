@@ -37,6 +37,7 @@ const navItems: NavItem[] = [
   },
   // { label: "Tienda", href: "/servicios" },
   { label: "NOSOTROS", href: "/nosotros" },
+  { label: "CERTIFICACIONES", href: "/certificaciones" },
   { label: "CONTACTO", href: "/contacto" },
 ];
 

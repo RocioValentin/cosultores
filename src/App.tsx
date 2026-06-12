@@ -9,6 +9,10 @@ import Contacto from "./pages/Contacto";
 import Nosotros from "./pages/Nosotros";
 // Legacy service sub-pages removed — unified into /servicios
 import Capacitaciones from "./pages/Capacitaciones";
+import Certificaciones from "./pages/Certificaciones";
+import CertificacionVerificar from "./pages/CertificacionVerificar";
+import CertificacionesAuth from "./pages/CertificacionesAuth";
+import CertificacionesAdmin from "./pages/CertificacionesAdmin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +29,10 @@ const App = () => (
           <Route path="/capacitaciones" element={<Capacitaciones />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/certificaciones" element={<Certificaciones />} />
+          <Route path="/certificaciones/verificar/:code" element={<CertificacionVerificar />} />
+          <Route path="/certificaciones/auth" element={<CertificacionesAuth />} />
+          <Route path="/certificaciones/admin" element={<CertificacionesAdmin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
