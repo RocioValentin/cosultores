@@ -16,6 +16,7 @@ export type Database = {
     Tables: {
       certifications: {
         Row: {
+          certificate_id: string
           course_name: string
           created_at: string
           dni: string
@@ -24,9 +25,9 @@ export type Database = {
           issue_date: string
           pdf_url: string | null
           updated_at: string
-          verification_code: string
         }
         Insert: {
+          certificate_id: string
           course_name: string
           created_at?: string
           dni: string
@@ -35,9 +36,9 @@ export type Database = {
           issue_date: string
           pdf_url?: string | null
           updated_at?: string
-          verification_code?: string
         }
         Update: {
+          certificate_id?: string
           course_name?: string
           created_at?: string
           dni?: string
@@ -46,7 +47,6 @@ export type Database = {
           issue_date?: string
           pdf_url?: string | null
           updated_at?: string
-          verification_code?: string
         }
         Relationships: []
       }
