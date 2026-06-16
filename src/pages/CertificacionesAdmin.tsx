@@ -211,7 +211,7 @@ const CertificacionesAdmin = () => {
             <CardContent className="p-4 md:p-6">
               <div className="relative mb-4">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                <Input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Buscar por DNI, nombre o curso..." className="pl-9" />
+                <Input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Buscar por Número de Identificación, nombre o curso..." className="pl-9" />
               </div>
 
               {loading ? (
@@ -226,7 +226,7 @@ const CertificacionesAdmin = () => {
                     <TableHeader>
                       <TableRow>
                         <TableHead>Nombre</TableHead>
-                        <TableHead>DNI</TableHead>
+                        <TableHead>Número de Identificación</TableHead>
                         <TableHead>Curso</TableHead>
                         <TableHead>Emisión</TableHead>
                         <TableHead>PDF</TableHead>
