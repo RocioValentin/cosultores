@@ -29,7 +29,7 @@ const Certificaciones = () => {
     setError(null);
     const trimmed = dni.trim();
     if (!/^[0-9A-Za-z\-]{4,20}$/.test(trimmed)) {
-      setError("Ingresa un DNI válido (4 a 20 caracteres alfanuméricos).");
+      setError("Ingresa un Número de Identificación válido (4 a 20 caracteres alfanuméricos).");
       return;
     }
     setLoading(true);
@@ -59,7 +59,7 @@ const Certificaciones = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Verifica tu certificado</h1>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Ingresa tu número de DNI para consultar y descargar los certificados emitidos por CORMA.
+              Ingresa tu Número de Identificación para consultar y descargar los certificados emitidos por CORMA.
             </p>
           </div>
         </section>
@@ -106,7 +106,7 @@ const Certificaciones = () => {
                     <AlertCircle className="w-10 h-10 mx-auto text-muted-foreground mb-3" />
                     <h3 className="font-semibold mb-1">No encontramos certificados</h3>
                     <p className="text-sm text-muted-foreground">
-                      No hay certificados asociados al DNI <strong>{dni}</strong>. Verifica los datos o contáctanos si crees que es un error.
+                      No hay certificados asociados al Número de Identificación <strong>{dni}</strong>. Verifica los datos o contáctanos si crees que es un error.
                     </p>
                   </CardContent>
                 </Card>
@@ -120,7 +120,7 @@ const Certificaciones = () => {
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-lg truncate">{c.course_name}</h3>
-                      <p className="text-sm text-muted-foreground">{c.full_name} · DNI {c.dni}</p>
+                      <p className="text-sm text-muted-foreground">{c.full_name} · Número de Identificación {c.dni}</p>
                       <p className="text-xs text-muted-foreground mt-1">
                         Emitido el {new Date(c.issue_date).toLocaleDateString("es-PE", { year: "numeric", month: "long", day: "numeric" })}
                       </p>
