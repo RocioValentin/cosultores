@@ -275,7 +275,7 @@ const CertificacionesAdmin = () => {
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <Label>DNI</Label>
+                <Label>Número de Identificación</Label>
                 <Input required value={form.dni} onChange={(e) => setForm({ ...form, dni: e.target.value })} />
               </div>
               <div>
@@ -284,7 +284,7 @@ const CertificacionesAdmin = () => {
               </div>
             </div>
             <div>
-              <Label>Curso / Certificación</Label>
+              <Label>Curso / Programa</Label>
               <Input required value={form.course_name} onChange={(e) => setForm({ ...form, course_name: e.target.value })} />
             </div>
             <div>
