@@ -18,7 +18,7 @@ type Cert = {
   course_name: string;
   issue_date: string;
   pdf_url: string | null;
-  verification_code: string;
+  certificate_id: string;
 };
 
 const CertificacionVerificar = () => {
@@ -40,7 +40,7 @@ const CertificacionVerificar = () => {
       const { data } = await supabase
         .from("certifications")
         .select("*")
-        .eq("verification_code", code)
+        .eq("certificate_id", code)
         .maybeSingle();
       if (!data) {
         setNotFound(true);
@@ -82,7 +82,7 @@ const CertificacionVerificar = () => {
             <Card><CardContent className="p-12 text-center">
               <AlertCircle className="w-10 h-10 mx-auto text-destructive mb-3" />
               <h2 className="text-xl font-semibold mb-2">Certificado no encontrado</h2>
-              <p className="text-muted-foreground">El código de verificación no existe o ha sido revocado.</p>
+              <p className="text-muted-foreground">El Certificate ID no existe o ha sido revocado.</p>
             </CardContent></Card>
           )}
 
@@ -104,7 +104,7 @@ const CertificacionVerificar = () => {
                   <Field label="Número de Identificación" value={cert.dni} />
                   <Field label="Curso / Programa" value={cert.course_name} />
                   <Field label="Fecha de emisión" value={new Date(cert.issue_date).toLocaleDateString("es-PE", { year: "numeric", month: "long", day: "numeric" })} />
-                  <Field label="ID de verificación" value={cert.verification_code} mono />
+                  <Field label="Certificate ID" value={cert.certificate_id} mono />
 
                   <div className="flex flex-wrap gap-2 pt-2">
                     {pdfUrl && (
