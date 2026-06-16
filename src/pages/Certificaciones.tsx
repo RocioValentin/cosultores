@@ -15,7 +15,7 @@ type Cert = {
   course_name: string;
   issue_date: string;
   pdf_url: string | null;
-  verification_code: string;
+  certificate_id: string;
 };
 
 const Certificaciones = () => {
@@ -44,7 +44,7 @@ const Certificaciones = () => {
       setError("Ocurrió un error al buscar. Intenta de nuevo.");
       return;
     }
-    setResults(data ?? []);
+    setResults((data ?? []) as Cert[]);
   };
 
   return (
@@ -125,7 +125,7 @@ const Certificaciones = () => {
                         Emitido el {new Date(c.issue_date).toLocaleDateString("es-PE", { year: "numeric", month: "long", day: "numeric" })}
                       </p>
                     </div>
-                    <Link to={`/certificaciones/verificar/${c.verification_code}`}>
+                    <Link to={`/certificaciones/verificar/${c.certificate_id}`}>
                       <Button variant="outline" className="gap-2">
                         Ver certificado <ArrowRight className="w-4 h-4" />
                       </Button>
