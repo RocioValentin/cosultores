@@ -74,7 +74,7 @@ const Certificaciones = () => {
                     <Input
                       value={dni}
                       onChange={(e) => setDni(e.target.value)}
-                      placeholder="Ingresa tu DNI"
+                      placeholder="Ingresa tu Número de Identificación"
                       className="pl-10 h-12 text-base"
                       maxLength={20}
                     />

@@ -101,8 +101,8 @@ const CertificacionVerificar = () => {
               <CardContent className="p-6 md:p-8 grid md:grid-cols-3 gap-8">
                 <div className="md:col-span-2 space-y-5">
                   <Field label="Nombre completo" value={cert.full_name} />
-                  <Field label="DNI" value={cert.dni} />
-                  <Field label="Curso / Certificación" value={cert.course_name} />
+                  <Field label="Número de Identificación" value={cert.dni} />
+                  <Field label="Curso / Programa" value={cert.course_name} />
                   <Field label="Fecha de emisión" value={new Date(cert.issue_date).toLocaleDateString("es-PE", { year: "numeric", month: "long", day: "numeric" })} />
                   <Field label="ID de verificación" value={cert.verification_code} mono />
 
