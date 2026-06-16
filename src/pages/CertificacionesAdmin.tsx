@@ -304,7 +304,7 @@ const CertificacionesAdmin = () => {
                 required
                 value={form.certificate_id}
                 onChange={(e) => setForm({ ...form, certificate_id: e.target.value })}
-                placeholder="Ej: CORMA-2026-0001"
+                placeholder="Ej: CM-26-001"
                 className="font-mono"
               />
               <p className="text-xs text-muted-foreground mt-1">Identificador único del certificado. Debe ser único.</p>
