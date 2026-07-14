@@ -11,11 +11,10 @@ import { supabase } from "@/integrations/supabase/client";
 type Cert = {
   id: string;
   full_name: string;
-  dni: string;
   course_name: string;
   issue_date: string;
-  pdf_url: string | null;
   certificate_id: string;
+  has_pdf: boolean;
 };
 
 const Certificaciones = () => {
@@ -34,11 +33,7 @@ const Certificaciones = () => {
     }
     setLoading(true);
     setResults(null);
-    const { data, error: err } = await supabase
-      .from("certifications")
-      .select("*")
-      .eq("dni", trimmed)
-      .order("issue_date", { ascending: false });
+    const { data, error: err } = await supabase.rpc("search_certifications_by_dni", { _dni: trimmed });
     setLoading(false);
     if (err) {
       setError("Ocurrió un error al buscar. Intenta de nuevo.");
