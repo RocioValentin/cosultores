@@ -1,1 +1,4 @@
 project_id = "aemdfqzkkxvxbfabhivs"
+
+[functions.get-certificate-pdf]
+verify_jwt = false
