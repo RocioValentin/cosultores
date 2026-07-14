@@ -8,17 +8,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { supabase } from "@/integrations/supabase/client";
-import { getCertificatePdfUrl } from "@/lib/certificates";
 import { useToast } from "@/hooks/use-toast";
 
 type Cert = {
   id: string;
   full_name: string;
-  dni: string;
   course_name: string;
   issue_date: string;
-  pdf_url: string | null;
   certificate_id: string;
+  has_pdf: boolean;
 };
 
 const CertificacionVerificar = () => {
@@ -37,24 +35,24 @@ const CertificacionVerificar = () => {
     const load = async () => {
       if (!code) return;
       setLoading(true);
-      const { data } = await supabase
-        .from("certifications")
-        .select("*")
-        .eq("certificate_id", code)
-        .maybeSingle();
-      if (!data) {
+      const { data } = await supabase.rpc("get_certification_by_code", { _certificate_id: code });
+      const row = Array.isArray(data) ? data[0] : null;
+      if (!row) {
         setNotFound(true);
       } else {
-        setCert(data as Cert);
-        if (data.pdf_url) {
-          const url = await getCertificatePdfUrl(data.pdf_url);
-          setPdfUrl(url);
+        setCert(row as Cert);
+        if (row.has_pdf) {
+          const { data: pdfData } = await supabase.functions.invoke("get-certificate-pdf", {
+            body: { certificate_id: code },
+          });
+          if (pdfData?.url) setPdfUrl(pdfData.url);
         }
       }
       setLoading(false);
     };
     load();
   }, [code]);
+
 
   const copyLink = async () => {
     await navigator.clipboard.writeText(verifyUrl);
