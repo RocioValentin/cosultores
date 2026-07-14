@@ -115,7 +115,7 @@ const Certificaciones = () => {
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-lg truncate">{c.course_name}</h3>
-                      <p className="text-sm text-muted-foreground">{c.full_name} · Número de Identificación {c.dni}</p>
+                      <p className="text-sm text-muted-foreground">{c.full_name}</p>
                       <p className="text-xs text-muted-foreground mt-1">
                         Emitido el {new Date(c.issue_date).toLocaleDateString("es-PE", { year: "numeric", month: "long", day: "numeric" })}
                       </p>
