@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
 import slideImage1 from "../assets/images/carrusel1.jpg";
+import nosotros from "../assets/images/NOSOTROS_paginaweb.png";
 
 const industries = [
   {
@@ -247,7 +248,7 @@ const Nosotros = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl lg:text-5xl font-heading text-primary-foreground leading-tight">
-                ¿Empezamos a <span className="text-accent font-bold">certificar</span> tu laboratorio?
+                ¿Empezamos a <span className="text-accent font-bold">ACREDITAR</span> tu laboratorio?
               </h2>
               <div className="flex flex-wrap gap-4 mt-8">
                 <a
@@ -268,7 +269,7 @@ const Nosotros = () => {
             </div>
             <div className="hidden lg:flex justify-end">
               <img
-                src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop"
+                src={nosotros}
                 alt="Profesional de laboratorio"
                 className="rounded-xl"
               />
