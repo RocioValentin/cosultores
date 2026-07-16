@@ -101,7 +101,7 @@ const CertificacionVerificar = () => {
                   <Field label="Nombre completo" value={cert.full_name} />
                   
                   <Field label="Curso / Programa" value={cert.course_name} />
-                  <Field label="Fecha de emisión" value={new Date(cert.issue_date).toLocaleDateString("es-PE", { year: "numeric", month: "long", day: "numeric" })} />
+                  <Field label="Fecha de emisión" value={new Date(cert.issue_date).toLocaleDateString("es-PE", { timeZone: "UTC", year: "numeric", month: "long", day: "numeric" })} />
                   <Field label="Certificate ID" value={cert.certificate_id} mono />
 
                   <div className="flex flex-wrap gap-2 pt-2">

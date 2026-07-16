@@ -270,7 +270,7 @@ const CertificacionesAdmin = () => {
                           <TableCell className="font-medium">{c.full_name}</TableCell>
                           <TableCell>{c.dni}</TableCell>
                           <TableCell className="max-w-[220px] truncate">{c.course_name}</TableCell>
-                          <TableCell>{new Date(c.issue_date).toLocaleDateString("es-PE")}</TableCell>
+                          <TableCell>{new Date(c.issue_date).toLocaleDateString("es-PE", {timeZone: "UTC",})}</TableCell>
                           <TableCell>{c.pdf_url ? <Badge variant="secondary">Sí</Badge> : <Badge variant="outline">No</Badge>}</TableCell>
                           <TableCell className="text-right">
                             <div className="flex justify-end gap-1">

@@ -117,7 +117,7 @@ const Certificaciones = () => {
                       <h3 className="font-semibold text-lg truncate">{c.course_name}</h3>
                       <p className="text-sm text-muted-foreground">{c.full_name}</p>
                       <p className="text-xs text-muted-foreground mt-1">
-                        Emitido el {new Date(c.issue_date).toLocaleDateString("es-PE", { year: "numeric", month: "long", day: "numeric" })}
+                        Emitido el {new Date(c.issue_date).toLocaleDateString("es-PE", { timeZone: "UTC", year: "numeric", month: "long", day: "numeric" })}
                       </p>
                     </div>
                     <Link to={`/certificaciones/verificar/${c.certificate_id}`}>
